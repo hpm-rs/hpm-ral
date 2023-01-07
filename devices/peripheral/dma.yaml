@@ -1,0 +1,5 @@
+_modify:
+  HDMA:
+    name: HDMA0
+  XDMA:
+    name: XDMA1

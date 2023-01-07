@@ -1,0 +1,3 @@
+_modify:
+  PUART:
+    name: PUART20   # Hack for raltool limitation

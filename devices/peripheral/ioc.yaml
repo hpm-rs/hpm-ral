@@ -1,0 +1,32 @@
+_modify:
+  IOC:
+    name: IOC0
+  PIOC:
+    name: PIOC10  # Hack for raltool
+  BIOC:
+    name: BIOC11  # Hack for raltool
+
+"IOC?,?IOC??":
+  "*FUNC_CTL":
+    LOOP_BACK:
+      Disabled: [0, "Output look back disabled"]
+      Enabled: [1, "Output look back enabled"]
+    ANALOG:
+      Disabled: [0, "Analog input disabled"]
+      Enabled: [1, "Analog input enabled"]
+  "*PAD_CTL":
+    OD:
+      Disabled: [0, "Open drain disabled"]
+      Enabled: [1, "Open drain enable"]
+    MS:
+      VOLT_3_3: [0, "3.3V"]
+      VOLT_1_8: [1, "1.8V"]
+    SMT:
+      Disabled: [0, "Schmitt trigger disabled"]
+      Enabled: [1, "Schmitt trigger enabled"]
+    PS:
+      Down: [0, "Pull down selected"]
+      Up: [1, "Pull up selected"]
+    PE:
+      Disable: [0, "Pull disable"]
+      Enable: [1, "Pull enable"]

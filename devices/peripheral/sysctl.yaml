@@ -1,0 +1,294 @@
+SYSCTL:
+  GROUP0_0_VALUE:
+    _delete:
+      - LINK
+    _add:
+      AHB_APB:
+        bitOffset: 0
+        bitWidth: 1
+      AXI:
+        bitOffset: 1
+        bitWidth: 1
+      CONN:
+        bitOffset: 2
+        bitWidth: 1
+      VIS:
+        bitOffset: 3
+        bitWidth: 1
+      DRAM:
+        bitOffset: 4
+        bitWidth: 1
+      ROM:
+        bitOffset: 5
+        bitWidth: 1
+      ILM_DLM0:
+        bitOffset: 6
+        bitWidth: 1
+      ILM_DLM1:
+        bitOffset: 7
+        bitWidth: 1
+      MCHTMRO:
+        bitOffset: 8
+        bitWidth: 1
+      MCHTMR1:
+        bitOffset: 9
+        bitWidth: 1
+      AXI_SRAMO:
+        bitOffset: 10
+        bitWidth: 1
+      AXI_SRAM1:
+        bitOffset: 11
+        bitWidth: 1
+      XPI0:
+        bitOffset: 12
+        bitWidth: 1
+      XPI1:
+        bitOffset: 13
+        bitWidth: 1
+      SDP:
+        bitOffset: 14
+        bitWidth: 1
+      RNG:
+        bitOffset: 15
+        bitWidth: 1
+      KEYM:
+        bitOffset: 16
+        bitWidth: 1
+      HDMA:
+        bitOffset: 17
+        bitWidth: 1
+      XDMA:
+        bitOffset: 18
+        bitWidth: 1
+      GPIO0_1:
+        bitOffset: 19
+        bitWidth: 1
+      MBX0:
+        bitOffset: 20
+        bitWidth: 1
+      MBX1:
+        bitOffset: 21
+        bitWidth: 1
+      WDG0:
+        bitOffset: 22
+        bitWidth: 1
+      WDG1:
+        bitOffset: 23
+        bitWidth: 1
+      WDG2:
+        bitOffset: 24
+        bitWidth: 1
+      WDG3:
+        bitOffset: 25
+        bitWidth: 1
+      GPTMRO:
+        bitOffset: 26
+        bitWidth: 1
+      GPTMR1:
+        bitOffset: 27
+        bitWidth: 1
+      GPTMR2:
+        bitOffset: 28
+        bitWidth: 1
+      GPTMR3:
+        bitOffset: 29
+        bitWidth: 1
+      GPTMR4:
+        bitOffset: 30
+        bitWidth: 1
+      GPTMR5:
+        bitOffset: 31
+        bitWidth: 1
+  GROUP0_1_VALUE:
+    _delete:
+      - LINK
+    _add:
+      GPTMR6:
+        bitOffset: 0
+        bitWidth: 1
+      GPTMR7:
+        bitOffset: 1
+        bitWidth: 1
+      UARTO:
+        bitOffset: 2
+        bitWidth: 1
+      UART1:
+        bitOffset: 3
+        bitWidth: 1
+      UART2:
+        bitOffset: 4
+        bitWidth: 1
+      UART3:
+        bitOffset: 5
+        bitWidth: 1
+      UART4:
+        bitOffset: 6
+        bitWidth: 1
+      UART5:
+        bitOffset: 7
+        bitWidth: 1
+      UART6:
+        bitOffset: 8
+        bitWidth: 1
+      UART7:
+        bitOffset: 9
+        bitWidth: 1
+      UART8:
+        bitOffset: 10
+        bitWidth: 1
+      UART9:
+        bitOffset: 11
+        bitWidth: 1
+      UART10:
+        bitOffset: 12
+        bitWidth: 1
+      UART11:
+        bitOffset: 13
+        bitWidth: 1
+      UART12:
+        bitOffset: 14
+        bitWidth: 1
+      UART13:
+        bitOffset: 15
+        bitWidth: 1
+      UART14:
+        bitOffset: 16
+        bitWidth: 1
+      UART15:
+        bitOffset: 17
+        bitWidth: 1
+      I2C0:
+        bitOffset: 18
+        bitWidth: 1
+      I2C1:
+        bitOffset: 19
+        bitWidth: 1
+      l2C2:
+        bitOffset: 20
+        bitWidth: 1
+      I2C3:
+        bitOffset: 21
+        bitWidth: 1
+      SPI0:
+        bitOffset: 22
+        bitWidth: 1
+      SPI1:
+        bitOffset: 23
+        bitWidth: 1
+      SPI2:
+        bitOffset: 24
+        bitWidth: 1
+      SPI3:
+        bitOffset: 25
+        bitWidth: 1
+      CANO:
+        bitOffset: 26
+        bitWidth: 1
+      CAN1:
+        bitOffset: 27
+        bitWidth: 1
+      CAN2:
+        bitOffset: 28
+        bitWidth: 1
+      CAN3:
+        bitOffset: 29
+        bitWidth: 1
+      PTPC:
+        bitOffset: 30
+        bitWidth: 1
+      ADC0:
+        bitOffset: 31
+        bitWidth: 1
+  GROUP0_2_VALUE:
+    _delete:
+      - LINK
+    _add:
+      ADC1:
+        bitOffset: 0
+        bitWidth: 1
+      ADC2:
+        bitOffset: 1
+        bitWidth: 1
+      ADC3:
+        bitOffset: 2
+        bitWidth: 1
+      ACMP:
+        bitOffset: 3
+        bitWidth: 1
+      I2S0:
+        bitOffset: 4
+        bitWidth: 1
+      I2S1:
+        bitOffset: 5
+        bitWidth: 1
+      I2S2:
+        bitOffset: 6
+        bitWidth: 1
+      I2S3:
+        bitOffset: 7
+        bitWidth: 1
+      PDM:
+        bitOffset: 8
+        bitWidth: 1
+      DAO:
+        bitOffset: 9
+        bitWidth: 1
+      SYNT:
+        bitOffset: 10
+        bitWidth: 1
+      MOTO:
+        bitOffset: 11
+        bitWidth: 1
+      MOT1:
+        bitOffset: 12
+        bitWidth: 1
+      MOT2:
+        bitOffset: 13
+        bitWidth: 1
+      MOT3:
+        bitOffset: 14
+        bitWidth: 1
+      LCDC:
+        bitOffset: 15
+        bitWidth: 1
+      CAMO:
+        bitOffset: 16
+        bitWidth: 1
+      CAM1:
+        bitOffset: 17
+        bitWidth: 1
+      JPEG:
+        bitOffset: 18
+        bitWidth: 1
+      PDMA:
+        bitOffset: 19
+        bitWidth: 1
+      ENETO:
+        bitOffset: 20
+        bitWidth: 1
+      ENET1:
+        bitOffset: 21
+        bitWidth: 1
+      NTMRO:
+        bitOffset: 22
+        bitWidth: 1
+      NTMR1:
+        bitOffset: 23
+        bitWidth: 1
+      SDXC0:
+        bitOffset: 24
+        bitWidth: 1
+      SDXC1:
+        bitOffset: 25
+        bitWidth: 1
+      USBO:
+        bitOffset: 26
+        bitWidth: 1
+      USB1:
+        bitOffset: 27
+        bitWidth: 1
+
+  "GROUP?_?_VALUE":
+    "*":
+      Unlinked: [0, "Unlink from group"]
+      Linked: [1, "Link to group"]

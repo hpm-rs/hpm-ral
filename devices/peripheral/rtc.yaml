@@ -1,0 +1,8 @@
+_modify:
+  RTC:
+    name: RTC0
+  RTCSHW:
+    name: RTCSHW1
+
+_rebase:
+  RTC0: RTCSHW1

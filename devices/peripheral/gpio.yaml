@@ -1,0 +1,10 @@
+_modify:
+  FGPIO:
+    name: FGPIO10
+  PGPIO:
+    name: PGPIO11
+  BGPIO:
+    name: BGPIO12
+
+_rebase:
+  GPIO0: FGPIO10

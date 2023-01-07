@@ -1,0 +1,8 @@
+_modify:
+  OTP:
+    name: OTP0
+  OTPSHW:
+    name: OTPSHW1
+
+_rebase:
+  OTP0: OTPSHW1

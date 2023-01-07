@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="1309ed3c-7b81-484f-be92-a42091f62efe" name="blink" defaultType="TOOL">
+      <configuration id="2a6f0c7c-00f3-4954-8263-4a3167505907" name="blink">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_cargo build blink" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_cargo clean" />
+        </clean>
+      </configuration>
+    </target>
+    <target id="87de699c-c43d-46c6-9f78-92c441f05e45" name="hello-world" defaultType="TOOL">
+      <configuration id="d53e80d1-0d55-4761-b727-41eb30b65bc6" name="hello-world">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_cargo build hello-world" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_cargo clean" />
+        </clean>
+      </configuration>
+    </target>
+  </component>
+</project>

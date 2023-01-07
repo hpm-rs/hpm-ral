@@ -1,0 +1,6 @@
+"*":
+  "*":
+    _delete:
+      - RESERVED
+      - RESERVE
+      - RSV

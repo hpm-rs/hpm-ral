@@ -1,0 +1,6 @@
+_modify:
+  PTMR:
+    name: PTMR2 # Hack for raltool limitation
+
+_rebase:
+  GPTMR0: NTMR0

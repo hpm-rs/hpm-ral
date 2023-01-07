@@ -1,0 +1,16 @@
+_svd: ../svd/HPM6750.svd
+
+_include:
+  - common.yaml
+  - peripheral/dma.yaml
+  - peripheral/gpio.yaml
+  - peripheral/ioc.yaml
+  - peripheral/otp.yaml
+  - peripheral/rtc.yaml
+  - peripheral/sysctl.yaml
+  - peripheral/tmr.yaml
+  - peripheral/uart.yaml
+
+_delete:
+  - "MBX*"
+  - "*WDG*"

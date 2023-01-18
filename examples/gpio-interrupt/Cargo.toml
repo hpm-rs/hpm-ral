@@ -1,0 +1,13 @@
+[package]
+name = "gpio-interrupt"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hpm-ral = { path = "../..", features = ["hpm6750", "rt"] }
+riscv = { git = "https://github.com/tfx2001/riscv", branch = "critial-section", features = ["critical-section-single-hart"] }
+riscv-rt = { git = "https://github.com/tfx2001/riscv-rt", branch = "master" }
+panic-halt = "0.2.0"
+critical-section = "1.1"
+plic = { git = "https://github.com/tfx2001/plic", features = ["primitive-id"] }
+lazy_static = { version = "1.4", features = ["spin_no_std"] }

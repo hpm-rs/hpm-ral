@@ -17,19 +17,20 @@ include = [
 version = "0.0.1"
 
 [dependencies]
-riscv = "0.10"
 ral-registers = "0.1"
+plic = { git = "https://github.com/tfx2001/plic", features = ["primitive-id"] }
 
 [lib]
 bench = false
 test = false
 
 [features]
-# rt = []
+rt = []
 hpm6750 = []
 
 [workspace]
 members = [
     "examples/blink",
     "examples/hello-world",
+    "examples/gpio-interrupt",
 ]

@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/examples/blink/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/hello-world/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/gpio-interrupt/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

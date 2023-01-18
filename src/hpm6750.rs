@@ -1,23 +1,122 @@
-// #[derive(Copy, Clone, Debug, PartialEq, Eq)]
-// pub enum Interrupt {}
-// pub type interrupt = Interrupt;
-// unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
-//     #[inline(always)]
-//     fn number(self) -> u16 {
-//         self as u16
-//     }
-// }
-#[cfg(feature = "rt")]
-mod _vectors {
-    extern "C" {}
-    pub union Vector {
-        _handler: unsafe extern "C" fn(),
-        _reserved: u32,
-    }
-    #[cfg_attr(target_os = "none", link_section = ".vector_table.interrupts")]
-    #[no_mangle]
-    pub static __INTERRUPTS: [Vector; 0] = [];
+#[allow(dead_code)]
+#[repr(u32)]
+pub enum ExternalInterrupt {
+    Gpio0PortA = 1,
+    Gpio0PortB = 2,
+    Gpio0PortC = 3,
+    Gpio0PortD = 4,
+    Gpio0PortE = 5,
+    Gpio0PortF = 6,
+    Gpio0PortX = 7,
+    Gpio0PortY = 8,
+    Gpio0PortZ = 9,
+    Gpio1PortA = 10,
+    Gpio1PortB = 11,
+    Gpio1PortC = 12,
+    Gpio1PortD = 13,
+    Gpio1PortE = 14,
+    Gpio1PortF = 15,
+    Gpio1PortX = 16,
+    Gpio1PortY = 17,
+    Gpio1PortZ = 18,
 }
+
+impl plic::InterruptSource for ExternalInterrupt {
+    fn id(self) -> core::num::NonZeroU32 {
+        core::num::NonZeroU32::new(self as u32).unwrap()
+    }
+}
+
+pub mod _trap {
+    extern "C" {
+        fn Gpio0PortAHandler();
+        fn Gpio0PortBHandler();
+        fn Gpio0PortCHandler();
+        fn Gpio0PortDHandler();
+        fn Gpio0PortEHandler();
+        fn Gpio0PortFHandler();
+        fn Gpio0PortXHandler();
+        fn Gpio0PortYHandler();
+        fn Gpio0PortZHandler();
+        fn Gpio1PortAHandler();
+        fn Gpio1PortBHandler();
+        fn Gpio1PortCHandler();
+        fn Gpio1PortDHandler();
+        fn Gpio1PortEHandler();
+        fn Gpio1PortFHandler();
+        fn Gpio1PortXHandler();
+        fn Gpio1PortYHandler();
+        fn Gpio1PortZHandler();
+    }
+
+    #[doc(hidden)]
+    pub union Vector {
+        pub _handler: unsafe extern "C" fn(),
+        pub _reserved: usize,
+    }
+
+    #[doc(hidden)]
+    #[no_mangle]
+    pub static __EXTERNAL_INTERRUPTS: [Vector; 18] = [
+        Vector {
+            _handler: Gpio0PortAHandler,
+        },
+        Vector {
+            _handler: Gpio0PortBHandler,
+        },
+        Vector {
+            _handler: Gpio0PortCHandler,
+        },
+        Vector {
+            _handler: Gpio0PortDHandler,
+        },
+        Vector {
+            _handler: Gpio0PortEHandler,
+        },
+        Vector {
+            _handler: Gpio0PortFHandler,
+        },
+        Vector {
+            _handler: Gpio0PortXHandler,
+        },
+        Vector {
+            _handler: Gpio0PortYHandler,
+        },
+        Vector {
+            _handler: Gpio0PortZHandler,
+        },
+        Vector {
+            _handler: Gpio1PortAHandler,
+        },
+        Vector {
+            _handler: Gpio1PortBHandler,
+        },
+        Vector {
+            _handler: Gpio1PortCHandler,
+        },
+        Vector {
+            _handler: Gpio1PortDHandler,
+        },
+        Vector {
+            _handler: Gpio1PortEHandler,
+        },
+        Vector {
+            _handler: Gpio1PortFHandler,
+        },
+        Vector {
+            _handler: Gpio1PortXHandler,
+        },
+        Vector {
+            _handler: Gpio1PortYHandler,
+        },
+        Vector {
+            _handler: Gpio1PortZHandler,
+        },
+    ];
+
+    pub const PLIC_BASE: *const plic::Plic = 0xe400_0000 as *const plic::Plic;
+}
+
 #[path = "."]
 pub mod acmp {
     #[doc = "ACMP"]
@@ -1559,33 +1658,6 @@ pub mod pgpr {
     }
 }
 #[path = "."]
-pub mod plic {
-    #[doc = "PLIC"]
-    pub const PLIC: *const RegisterBlock = 0xe400_0000 as *const RegisterBlock;
-    #[path = "blocks/hpm6750/plic.rs"]
-    mod blocks;
-    pub use blocks::*;
-    pub type Instance<const N: u8> = crate::Instance<RegisterBlock, N>;
-    pub type PLIC = Instance<{ crate::SOLE_INSTANCE }>;
-    impl crate::private::Sealed for PLIC {}
-    impl crate::Valid for PLIC {}
-    impl PLIC {
-        #[doc = r" Acquire a vaild, but possibly aliased, instance."]
-        #[doc = r""]
-        #[doc = r" # Safety"]
-        #[doc = r""]
-        #[doc = r" See [the struct-level safety documentation](crate::Instance)."]
-        #[inline]
-        pub const unsafe fn instance() -> Self {
-            Instance::new(PLIC)
-        }
-    }
-    #[doc = r" Returns the instance number `N` for a peripheral instance."]
-    pub fn number(rb: *const RegisterBlock) -> Option<u8> {
-        core::ptr::eq(rb, PLIC).then_some(0)
-    }
-}
-#[path = "."]
 pub mod plicsw {
     #[doc = "PLICSW"]
     pub const PLICSW: *const RegisterBlock = 0xe640_0000 as *const RegisterBlock;
@@ -2738,7 +2810,6 @@ pub struct Instances {
     pub PDM: pdm::PDM,
     pub PDMA: pdma::PDMA,
     pub PGPR: pgpr::PGPR,
-    pub PLIC: plic::PLIC,
     pub PLICSW: plicsw::PLICSW,
     pub PLLCTL: pllctl::PLLCTL,
     pub PMON: pmon::PMON,
@@ -2871,7 +2942,6 @@ impl Instances {
             PDM: pdm::PDM::instance(),
             PDMA: pdma::PDMA::instance(),
             PGPR: pgpr::PGPR::instance(),
-            PLIC: plic::PLIC::instance(),
             PLICSW: plicsw::PLICSW::instance(),
             PLLCTL: pllctl::PLLCTL::instance(),
             PMON: pmon::PMON::instance(),

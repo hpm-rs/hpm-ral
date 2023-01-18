@@ -21,5 +21,15 @@
         </clean>
       </configuration>
     </target>
+    <target id="b7d039cb-b48d-47b4-8049-1780e74145ec" name="gpio-interrupt" defaultType="TOOL">
+      <configuration id="d1d6f2c9-a7be-44ba-a380-8b3f7b8a0be2" name="gpio-interrupt">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_cargo build gpio-interrupt" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_cargo clean" />
+        </clean>
+      </configuration>
+    </target>
   </component>
 </project>

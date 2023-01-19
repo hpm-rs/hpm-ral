@@ -33,4 +33,5 @@ members = [
     "examples/blink",
     "examples/hello-world",
     "examples/gpio-interrupt",
+    "raltool",
 ]

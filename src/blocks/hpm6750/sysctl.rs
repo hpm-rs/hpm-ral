@@ -6143,9 +6143,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod AXI {
@@ -6155,9 +6155,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CONN {
@@ -6167,9 +6167,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod VIS {
@@ -6179,9 +6179,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod DRAM {
@@ -6191,9 +6191,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ROM {
@@ -6203,9 +6203,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ILM_DLM0 {
@@ -6215,9 +6215,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ILM_DLM1 {
@@ -6227,9 +6227,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MCHTMRO {
@@ -6239,9 +6239,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MCHTMR1 {
@@ -6251,9 +6251,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod AXI_SRAMO {
@@ -6263,9 +6263,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod AXI_SRAM1 {
@@ -6275,9 +6275,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod XPI0 {
@@ -6287,9 +6287,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod XPI1 {
@@ -6299,9 +6299,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SDP {
@@ -6311,9 +6311,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod RNG {
@@ -6323,9 +6323,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod KEYM {
@@ -6335,9 +6335,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod HDMA {
@@ -6347,9 +6347,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod XDMA {
@@ -6359,9 +6359,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPIO0_1 {
@@ -6371,9 +6371,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MBX0 {
@@ -6383,9 +6383,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MBX1 {
@@ -6395,9 +6395,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod WDG0 {
@@ -6407,9 +6407,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod WDG1 {
@@ -6419,9 +6419,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod WDG2 {
@@ -6431,9 +6431,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod WDG3 {
@@ -6443,9 +6443,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMRO {
@@ -6455,9 +6455,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR1 {
@@ -6467,9 +6467,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR2 {
@@ -6479,9 +6479,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR3 {
@@ -6491,9 +6491,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR4 {
@@ -6503,9 +6503,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR5 {
@@ -6515,9 +6515,9 @@ pub mod GROUP0_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }
@@ -6563,9 +6563,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod GPTMR7 {
@@ -6575,9 +6575,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UARTO {
@@ -6587,9 +6587,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART1 {
@@ -6599,9 +6599,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART2 {
@@ -6611,9 +6611,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART3 {
@@ -6623,9 +6623,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART4 {
@@ -6635,9 +6635,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART5 {
@@ -6647,9 +6647,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART6 {
@@ -6659,9 +6659,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART7 {
@@ -6671,9 +6671,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART8 {
@@ -6683,9 +6683,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART9 {
@@ -6695,9 +6695,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART10 {
@@ -6707,9 +6707,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART11 {
@@ -6719,9 +6719,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART12 {
@@ -6731,9 +6731,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART13 {
@@ -6743,9 +6743,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART14 {
@@ -6755,9 +6755,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod UART15 {
@@ -6767,9 +6767,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2C0 {
@@ -6779,9 +6779,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2C1 {
@@ -6791,9 +6791,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod L2C2 {
@@ -6803,9 +6803,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2C3 {
@@ -6815,9 +6815,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SPI0 {
@@ -6827,9 +6827,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SPI1 {
@@ -6839,9 +6839,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SPI2 {
@@ -6851,9 +6851,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SPI3 {
@@ -6863,9 +6863,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CANO {
@@ -6875,9 +6875,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CAN1 {
@@ -6887,9 +6887,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CAN2 {
@@ -6899,9 +6899,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CAN3 {
@@ -6911,9 +6911,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod PTPC {
@@ -6923,9 +6923,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ADC0 {
@@ -6935,9 +6935,9 @@ pub mod GROUP0_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }
@@ -6983,9 +6983,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ADC2 {
@@ -6995,9 +6995,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ADC3 {
@@ -7007,9 +7007,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ACMP {
@@ -7019,9 +7019,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2S0 {
@@ -7031,9 +7031,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2S1 {
@@ -7043,9 +7043,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2S2 {
@@ -7055,9 +7055,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod I2S3 {
@@ -7067,9 +7067,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod PDM {
@@ -7079,9 +7079,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod DAO {
@@ -7091,9 +7091,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SYNT {
@@ -7103,9 +7103,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MOTO {
@@ -7115,9 +7115,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MOT1 {
@@ -7127,9 +7127,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MOT2 {
@@ -7139,9 +7139,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod MOT3 {
@@ -7151,9 +7151,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod LCDC {
@@ -7163,9 +7163,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CAMO {
@@ -7175,9 +7175,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod CAM1 {
@@ -7187,9 +7187,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod JPEG {
@@ -7199,9 +7199,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod PDMA {
@@ -7211,9 +7211,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ENETO {
@@ -7223,9 +7223,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod ENET1 {
@@ -7235,9 +7235,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod NTMRO {
@@ -7247,9 +7247,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod NTMR1 {
@@ -7259,9 +7259,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SDXC0 {
@@ -7271,9 +7271,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod SDXC1 {
@@ -7283,9 +7283,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod USBO {
@@ -7295,9 +7295,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
     pub mod USB1 {
@@ -7307,9 +7307,9 @@ pub mod GROUP0_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }
@@ -7356,9 +7356,9 @@ pub mod GROUP1_0_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }
@@ -7405,9 +7405,9 @@ pub mod GROUP1_1_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }
@@ -7454,9 +7454,9 @@ pub mod GROUP1_2_VALUE {
         pub mod W {}
         pub mod RW {
             #[doc = "Unlink from group"]
-            pub const UNLINKED: u32 = 0;
+            pub const Unlinked: u32 = 0;
             #[doc = "Link to group"]
-            pub const LINKED: u32 = 0x01;
+            pub const Linked: u32 = 0x01;
         }
     }
 }

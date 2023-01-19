@@ -1,5 +1,5 @@
-use lazy_static::lazy_static;
 use hpm_ral::_trap::{PLIC_BASE, __EXTERNAL_INTERRUPTS};
+use lazy_static::lazy_static;
 
 lazy_static! {
     pub static ref PLIC: &'static plic::Plic = unsafe { &*(PLIC_BASE) };
@@ -13,7 +13,7 @@ fn machine_external_handler() {
 
     unsafe {
         if let Some(source) = PLIC.claim(0) {
-            let h = &__EXTERNAL_INTERRUPTS[u32::from(source) as usize - 1];
+            let h = &__EXTERNAL_INTERRUPTS[u32::from(source) as usize];
             if h._reserved != 0 {
                 (h._handler)();
             } else {

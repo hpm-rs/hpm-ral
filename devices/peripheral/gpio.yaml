@@ -7,4 +7,4 @@ _modify:
     name: BGPIO12
 
 _rebase:
-  GPIO0: FGPIO10
+  GPIO0: FGPIO10    # rebase after modify, so use the new name

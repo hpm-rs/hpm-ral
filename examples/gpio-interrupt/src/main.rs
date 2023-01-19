@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-mod external_int;
+mod ext_int;
 
 extern crate panic_halt;
 
@@ -14,7 +14,7 @@ use riscv::interrupt;
 use riscv::register;
 use riscv_rt::entry;
 
-use external_int::{PLIC};
+use ext_int::PLIC;
 
 struct Uart<const N: u8> {
     inner: ral::uart::Instance<N>,
@@ -62,9 +62,9 @@ impl<const N: u8> Write for Uart<N> {
 static __FLAG: Mutex<RefCell<bool>> = Mutex::new(RefCell::new(false));
 
 fn board_init(sysctl: &ral::sysctl::SYSCTL) {
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: LINKED);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: LINKED);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_1_VALUE, UARTO: LINKED);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: Linked);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: Linked);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_1_VALUE, UARTO: Linked);
     // Set UART0 clock source to osc24 and divider to 1 (24 MHz)
     ral::modify_reg!(ral::sysctl, sysctl, CLOCK_CLK_TOP_UART0, MUX: 0, DIV: 0);
 
@@ -82,9 +82,9 @@ fn board_init_gpio_pins(ioc: &ral::ioc::IOC0, gpio: &ral::gpio::GPIO0) {
     ral::modify_reg!(ral::ioc, ioc, PAD_PD13_FUNC_CTL, ALT_SELECT: 0);
     ral::modify_reg!(ral::ioc, ioc, PAD_PD25_FUNC_CTL, ALT_SELECT: 0);
     // Enable pull-up resistor
-    ral::modify_reg!(ral::ioc, ioc, PAD_PD19_PAD_CTL, PS: UP, PE: ENABLE);
-    ral::modify_reg!(ral::ioc, ioc, PAD_PD23_PAD_CTL, PS: UP, PE: ENABLE);
-    ral::modify_reg!(ral::ioc, ioc, PAD_PD25_PAD_CTL, PS: UP, PE: ENABLE);
+    ral::modify_reg!(ral::ioc, ioc, PAD_PD19_PAD_CTL, PS: Up, PE: Enable);
+    ral::modify_reg!(ral::ioc, ioc, PAD_PD23_PAD_CTL, PS: Up, PE: Enable);
+    ral::modify_reg!(ral::ioc, ioc, PAD_PD25_PAD_CTL, PS: Up, PE: Enable);
     // Set GPIO as input
     ral::write_reg!(
         ral::gpio,

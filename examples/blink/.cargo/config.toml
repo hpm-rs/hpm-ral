@@ -3,6 +3,6 @@ target = "riscv32imac-unknown-none-elf"
 
 [target.riscv32imac-unknown-none-elf]
 rustflags = [
-  "-C", "link-arg=-Tdevice.x",
+  "-C", "link-arg=-Tmemory.x",
   "-C", "link-arg=-Tlink.x",
 ]

@@ -1,32 +1,49 @@
-#[allow(dead_code)]
-#[repr(u32)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq)]
 pub enum ExternalInterrupt {
+    #[doc = "1 - GPIO0 port A interrupt"]
     Gpio0PortA = 1,
+    #[doc = "2 - GPIO0 port B interrupt"]
     Gpio0PortB = 2,
+    #[doc = "3 - GPIO0 port C interrupt"]
     Gpio0PortC = 3,
+    #[doc = "4 - GPIO0 port D interrupt"]
     Gpio0PortD = 4,
+    #[doc = "5 - GPIO0 port E interrupt"]
     Gpio0PortE = 5,
+    #[doc = "6 - GPIO0 port F interrupt"]
     Gpio0PortF = 6,
+    #[doc = "7 - GPIO0 port X interrupt"]
     Gpio0PortX = 7,
+    #[doc = "8 - GPIO0 port Y interrupt"]
     Gpio0PortY = 8,
+    #[doc = "9 - GPIO0 port Z interrupt"]
     Gpio0PortZ = 9,
+    #[doc = "10 - GPIO1 port A interrupt"]
     Gpio1PortA = 10,
+    #[doc = "11 - GPIO1 port B interrupt"]
     Gpio1PortB = 11,
+    #[doc = "12 - GPIO1 port C interrupt"]
     Gpio1PortC = 12,
+    #[doc = "13 - GPIO1 port D interrupt"]
     Gpio1PortD = 13,
+    #[doc = "14 - GPIO1 port E interrupt"]
     Gpio1PortE = 14,
+    #[doc = "15 - GPIO1 port F interrupt"]
     Gpio1PortF = 15,
+    #[doc = "16 - GPIO1 port X interrupt"]
     Gpio1PortX = 16,
+    #[doc = "17 - GPIO1 port Y interrupt"]
     Gpio1PortY = 17,
+    #[doc = "18 - GPIO1 port Z interrupt"]
     Gpio1PortZ = 18,
 }
-
 impl plic::InterruptSource for ExternalInterrupt {
+    #[inline(always)]
     fn id(self) -> core::num::NonZeroU32 {
         core::num::NonZeroU32::new(self as u32).unwrap()
     }
 }
-
+#[cfg(feature = "rt")]
 pub mod _trap {
     extern "C" {
         fn Gpio0PortAHandler();
@@ -48,16 +65,15 @@ pub mod _trap {
         fn Gpio1PortYHandler();
         fn Gpio1PortZHandler();
     }
-
     #[doc(hidden)]
     pub union Vector {
         pub _handler: unsafe extern "C" fn(),
         pub _reserved: usize,
     }
-
     #[doc(hidden)]
     #[no_mangle]
-    pub static __EXTERNAL_INTERRUPTS: [Vector; 18] = [
+    pub static __EXTERNAL_INTERRUPTS: [Vector; 19] = [
+        Vector { _reserved: 0 },
         Vector {
             _handler: Gpio0PortAHandler,
         },
@@ -113,10 +129,8 @@ pub mod _trap {
             _handler: Gpio1PortZHandler,
         },
     ];
-
     pub const PLIC_BASE: *const plic::Plic = 0xe400_0000 as *const plic::Plic;
 }
-
 #[path = "."]
 pub mod acmp {
     #[doc = "ACMP"]

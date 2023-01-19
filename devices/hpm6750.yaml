@@ -11,6 +11,68 @@ _include:
   - peripheral/tmr.yaml
   - peripheral/uart.yaml
 
+# Interrupt vector
+GPIO0:
+  _add:
+    _interrupts:
+      Gpio0PortA:
+          description: GPIO0 port A interrupt
+          value: 1
+      Gpio0PortB:
+          description: GPIO0 port B interrupt
+          value: 2
+      Gpio0PortC:
+          description: GPIO0 port C interrupt
+          value: 3
+      Gpio0PortD:
+          description: GPIO0 port D interrupt
+          value: 4
+      Gpio0PortE:
+          description: GPIO0 port E interrupt
+          value: 5
+      Gpio0PortF:
+          description: GPIO0 port F interrupt
+          value: 6
+      Gpio0PortX:
+          description: GPIO0 port X interrupt
+          value: 7
+      Gpio0PortY:
+          description: GPIO0 port Y interrupt
+          value: 8
+      Gpio0PortZ:
+          description: GPIO0 port Z interrupt
+          value: 9
+GPIO1:
+  _add:
+    _interrupts:
+      Gpio1PortA:
+          description: GPIO1 port A interrupt
+          value: 10
+      Gpio1PortB:
+          description: GPIO1 port B interrupt
+          value: 11
+      Gpio1PortC:
+          description: GPIO1 port C interrupt
+          value: 12
+      Gpio1PortD:
+          description: GPIO1 port D interrupt
+          value: 13
+      Gpio1PortE:
+          description: GPIO1 port E interrupt
+          value: 14
+      Gpio1PortF:
+          description: GPIO1 port F interrupt
+          value: 15
+      Gpio1PortX:
+          description: GPIO1 port X interrupt
+          value: 16
+      Gpio1PortY:
+          description: GPIO1 port Y interrupt
+          value: 17
+      Gpio1PortZ:
+          description: GPIO1 port Z interrupt
+          value: 18
+
 _delete:
   - "MBX*"
   - "*WDG*"

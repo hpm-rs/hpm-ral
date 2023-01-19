@@ -51,9 +51,9 @@ impl<const N: u8> Write for Uart<N> {
 }
 
 fn board_init(sysctl: &ral::sysctl::SYSCTL) {
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: LINKED);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: LINKED);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_1_VALUE, UARTO: LINKED);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: Linked);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: Linked);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_1_VALUE, UARTO: Linked);
     // Set UART0 clock source to osc24 and divider to 1 (24 MHz)
     ral::modify_reg!(ral::sysctl, sysctl, CLOCK_CLK_TOP_UART0, MUX: 0, DIV: 0);
 }

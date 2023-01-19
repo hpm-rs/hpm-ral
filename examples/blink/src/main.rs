@@ -9,8 +9,8 @@ use riscv_rt::entry;
 fn board_init() {
     let sysctl = unsafe { ral::sysctl::SYSCTL::instance() };
 
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: LINKED);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: LINKED);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: Linked);
+    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: Linked);
 
     board_turn_off_rgb_led();
 }
@@ -19,7 +19,7 @@ fn board_turn_off_rgb_led() {
     let ioc = unsafe { ral::ioc::IOC0::instance() };
 
     ral::modify_reg!(ral::ioc, ioc, PAD_PD15_FUNC_CTL, ALT_SELECT: 0);
-    ral::modify_reg!(ral::ioc, ioc, PAD_PD15_PAD_CTL, PE: ENABLE, PS: DOWN);
+    ral::modify_reg!(ral::ioc, ioc, PAD_PD15_PAD_CTL, PE: Enable, PS: Down);
 }
 
 fn board_init_led_pins() {

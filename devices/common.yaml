@@ -1,6 +1,13 @@
+_modify:
+    cpu:
+      name: riscv32imafdc
+
 "*":
   "*":
     _delete:
       - RESERVED
       - RESERVE
       - RSV
+
+_delete:
+  - PLIC

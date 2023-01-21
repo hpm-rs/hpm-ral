@@ -1,3 +1,33 @@
 _modify:
   PUART:
     name: PUART20   # Hack for raltool limitation
+
+UART0:
+  CFG:
+    FIFOSIZE:
+      Bytes16: [0, "16-byte FIFO"]
+      Bytes32: [1, "32-byte FIFO"]
+      Bytes64: [2, "64-byte FIFO"]
+      Bytes128: [3, "128-byte FIFO"]
+  IER:
+    "*":
+      Disable: [0, "Interrupt disable"] 
+      Enable: [1, "Interrupt enable"] 
+  LCR:
+    SPS:
+      Free: [0, "Disable the sticky bit parity"]
+      Sticky: [1, "Parity bit is constant 0 or 1, depending on bit4 (EPS)"]
+    EPS:
+      Odd: [0, "Old parity"]
+      Even: [1, "Even parity (an even number of logic-1 is in the data and parity bits)"]
+    PEN:
+      Disable: [0, "Disable parity check"]
+      Enable: [1, "Enable parity check"]
+    STB:
+      Stop1Bit: [0, "1 bit"]
+      Stop1p5Bit: [1, "The number of STOP bit is based on the WLS setting. When WLS = 0, STOP bit is 1.5 bits. When WLS = 1, 2, 3, STOP bit is 2 bits"]
+    WLS:
+      Bits5: [0, "5 bits"]
+      Bits6: [1, "6 bits"]
+      Bits7: [2, "7 bits"]
+      Bits8: [3, "8 bits"]

@@ -3,6 +3,7 @@ _svd: ../svd/HPM6750.svd
 _include:
   - common.yaml
   - peripheral/dma.yaml
+  - peripheral/dmamux.yaml
   - peripheral/gpio.yaml
   - peripheral/ioc.yaml
   - peripheral/otp.yaml

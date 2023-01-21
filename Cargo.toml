@@ -18,7 +18,7 @@ version = "0.0.1"
 
 [dependencies]
 ral-registers = "0.1"
-plic = { git = "https://github.com/tfx2001/plic", features = ["primitive-id"] }
+plic = { version = "0.0.2", features = ["primitive-id"] }
 
 [lib]
 bench = false
@@ -33,5 +33,6 @@ members = [
     "examples/blink",
     "examples/hello-world",
     "examples/gpio-interrupt",
+    "examples/uart-dma",
     "raltool",
 ]

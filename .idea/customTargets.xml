@@ -4,7 +4,7 @@
     <target id="1309ed3c-7b81-484f-be92-a42091f62efe" name="blink" defaultType="TOOL">
       <configuration id="2a6f0c7c-00f3-4954-8263-4a3167505907" name="blink">
         <build type="TOOL">
-          <tool actionId="Tool_External Tools_cargo build blink" />
+          <tool actionId="Tool_External Tools_cargo build uart-dma" />
         </build>
         <clean type="TOOL">
           <tool actionId="Tool_External Tools_cargo clean" />
@@ -25,6 +25,16 @@
       <configuration id="d1d6f2c9-a7be-44ba-a380-8b3f7b8a0be2" name="gpio-interrupt">
         <build type="TOOL">
           <tool actionId="Tool_External Tools_cargo build gpio-interrupt" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_cargo clean" />
+        </clean>
+      </configuration>
+    </target>
+    <target id="4603c3ae-dd55-4177-a1c9-f0df1d489f38" name="uart-dma" defaultType="TOOL">
+      <configuration id="e97e1fe4-afc2-4292-9778-66f5b64934ac" name="uart-dma">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_cargo build uart-dma" />
         </build>
         <clean type="TOOL">
           <tool actionId="Tool_External Tools_cargo clean" />

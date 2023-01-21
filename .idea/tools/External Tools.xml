@@ -3,28 +3,35 @@
     <exec>
       <option name="COMMAND" value="cargo" />
       <option name="PARAMETERS" value="build" />
-      <option name="WORKING_DIRECTORY" value="C:/Users/tfx20/Desktop/Rust/embedded/hpm-ral/examples/blink" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/examples/blink" />
     </exec>
   </tool>
   <tool name="cargo build hello-world" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="cargo" />
       <option name="PARAMETERS" value="build" />
-      <option name="WORKING_DIRECTORY" value="C:/Users/tfx20/Desktop/Rust/embedded/hpm-ral/examples/hello-world" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/examples/hello-world" />
     </exec>
   </tool>
   <tool name="cargo build gpio-interrupt" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="cargo" />
       <option name="PARAMETERS" value="build" />
-      <option name="WORKING_DIRECTORY" value="C:/Users/tfx20/Desktop/Rust/embedded/hpm-ral/examples/gpio-interrupt" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/examples/gpio-interrupt" />
+    </exec>
+  </tool>
+  <tool name="cargo build uart-dma" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="cargo" />
+      <option name="PARAMETERS" value="build" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/examples/uart-dma" />
     </exec>
   </tool>
   <tool name="cargo clean" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="cargo" />
       <option name="PARAMETERS" value="clean" />
-      <option name="WORKING_DIRECTORY" value="C:/Users/tfx20/Desktop/Rust/embedded/hpm-ral/examples/blink" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
     </exec>
   </tool>
 </toolSet>

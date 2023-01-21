@@ -4,6 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-riscv-rt = { git = "https://github.com/tfx2001/riscv-rt", branch = "master" }
+riscv-rt = "0.11.0"
 panic-halt = "0.2.0"
 hpm-ral = { path = "../..", features = ["hpm6750"] }

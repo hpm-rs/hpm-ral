@@ -28,7 +28,16 @@ pub mod CFG {
     pub mod FIFOSIZE {
         pub const offset: u32 = 0;
         pub const mask: u32 = 0x03 << offset;
-        pub mod R {}
+        pub mod R {
+            #[doc = "16-byte FIFO"]
+            pub const Bytes16: u32 = 0;
+            #[doc = "32-byte FIFO"]
+            pub const Bytes32: u32 = 0x01;
+            #[doc = "64-byte FIFO"]
+            pub const Bytes64: u32 = 0x02;
+            #[doc = "128-byte FIFO"]
+            pub const Bytes128: u32 = 0x03;
+        }
         pub mod W {}
         pub mod RW {}
     }
@@ -125,7 +134,16 @@ pub mod LCR {
         pub const mask: u32 = 0x03 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "5 bits"]
+            pub const Bits5: u32 = 0;
+            #[doc = "6 bits"]
+            pub const Bits6: u32 = 0x01;
+            #[doc = "7 bits"]
+            pub const Bits7: u32 = 0x02;
+            #[doc = "8 bits"]
+            pub const Bits8: u32 = 0x03;
+        }
     }
     #[doc = "Number of STOP bits 0: 1 bits 1: The number of STOP bit is based on the WLS setting When WLS = 0, STOP bit is 1.5 bits When WLS = 1, 2, 3, STOP bit is 2 bits"]
     pub mod STB {
@@ -133,7 +151,12 @@ pub mod LCR {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "1 bit"]
+            pub const Stop1bit: u32 = 0;
+            #[doc = "The number of STOP bit is based on the WLS setting. When WLS = 0, STOP bit is 1.5 bits. When WLS = 1, 2, 3, STOP bit is 2 bits"]
+            pub const Stop1p5bit: u32 = 0x01;
+        }
     }
     #[doc = "Parity enable When this bit is set, a parity bit is generated in transmitted data before the first STOP bit and the parity bit would be checked for the received data."]
     pub mod PEN {
@@ -141,7 +164,12 @@ pub mod LCR {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable parity check"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable parity check"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "Even parity select 1: Even parity (an even number of logic-1 is in the data and parity bits) 0: Old parity."]
     pub mod EPS {
@@ -149,7 +177,12 @@ pub mod LCR {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Old parity"]
+            pub const Odd: u32 = 0;
+            #[doc = "Even parity (an even number of logic-1 is in the data and parity bits)"]
+            pub const Even: u32 = 0x01;
+        }
     }
     #[doc = "Stick parity 1: Parity bit is constant 0 or 1, depending on bit4 (EPS). 0: Disable the sticky bit parity."]
     pub mod SPS {
@@ -157,7 +190,12 @@ pub mod LCR {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable the sticky bit parity"]
+            pub const Free: u32 = 0;
+            #[doc = "Parity bit is constant 0 or 1, depending on bit4 (EPS)"]
+            pub const Sticky: u32 = 0x01;
+        }
     }
     #[doc = "Break control"]
     pub mod BC {

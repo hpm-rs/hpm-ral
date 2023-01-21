@@ -1,0 +1,5 @@
+DMAMUX:
+  "MUXCFG_?DMA_MUX?":
+    ENABLE:
+      Disable: [0, "DMA Mux channel is disabled"]
+      Enable: [1, "DMA Mux channel is enabled"]

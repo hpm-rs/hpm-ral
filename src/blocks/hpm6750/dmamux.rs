@@ -50,7 +50,12 @@ pub mod MUXCFG_HDMA_MUX0 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX1 Configuration"]
@@ -69,7 +74,12 @@ pub mod MUXCFG_HDMA_MUX1 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX2 Configuration"]
@@ -88,7 +98,12 @@ pub mod MUXCFG_HDMA_MUX2 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX3 Configuration"]
@@ -107,7 +122,12 @@ pub mod MUXCFG_HDMA_MUX3 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX4 Configuration"]
@@ -126,7 +146,12 @@ pub mod MUXCFG_HDMA_MUX4 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX5 Configuration"]
@@ -145,7 +170,12 @@ pub mod MUXCFG_HDMA_MUX5 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX6 Configuration"]
@@ -164,7 +194,12 @@ pub mod MUXCFG_HDMA_MUX6 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "HDMA MUX7 Configuration"]
@@ -183,7 +218,12 @@ pub mod MUXCFG_HDMA_MUX7 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX0 Configuration"]
@@ -202,7 +242,12 @@ pub mod MUXCFG_XDMA_MUX0 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX1 Configuration"]
@@ -221,7 +266,12 @@ pub mod MUXCFG_XDMA_MUX1 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX2 Configuration"]
@@ -240,7 +290,12 @@ pub mod MUXCFG_XDMA_MUX2 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX3 Configuration"]
@@ -259,7 +314,12 @@ pub mod MUXCFG_XDMA_MUX3 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX4 Configuration"]
@@ -278,7 +338,12 @@ pub mod MUXCFG_XDMA_MUX4 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX5 Configuration"]
@@ -297,7 +362,12 @@ pub mod MUXCFG_XDMA_MUX5 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX6 Configuration"]
@@ -316,7 +386,12 @@ pub mod MUXCFG_XDMA_MUX6 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "XDMA MUX7 Configuration"]
@@ -335,6 +410,11 @@ pub mod MUXCFG_XDMA_MUX7 {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "DMA Mux channel is disabled"]
+            pub const Disable: u32 = 0;
+            #[doc = "DMA Mux channel is enabled"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }

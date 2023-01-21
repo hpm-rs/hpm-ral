@@ -3,3 +3,47 @@ _modify:
     name: HDMA0
   XDMA:
     name: XDMA1
+
+HDMA0:
+  "CHCTRL_CH?_CTRL":
+    ENABLE:
+      Disable: [0, "Disable"]
+      Enable: [1, "Enable"]
+    INTTCMASK:
+      Enable: [0, "Allow the terminal count interrupt to be triggered"]
+      Disable: [1, "Disable the terminal count interrupt"]
+    INTERRMASK:
+      Enable: [0, "Allow the error interrupt to be triggered"]
+      Disable: [1, "Disable the error interrupt interrupt"]
+    INTABTMASK:
+      Enable: [0, "Allow the abort interrupt to be triggered"]
+      Disable: [1, "Disable the abort interrupt interrupt"]
+    DSTADDRCTRL,SRCADDRCTRL:
+      Increment: [0, "Increment address"]
+      Decrement: [1, "Decrement address"]
+      Fixed: [2, "Fixed address"]
+    DSTMODE,SRCMODE:
+      Normal: [0, "Normal mode"]
+      Handshake: [1, "Handshake mode"]
+    DSTWIDTH,SRCWIDTH:
+      Byte: [0, "Byte transfer"]
+      HalfWord: [1, "Half-word transfer"]
+      Word: [2, "Word transfer"]
+      DoubleWord: [3, "Double word transfer"]
+      QuadWord: [4, "Quad word transfer"]
+      EightWord: [5, "Eight word transfer"]
+    SRCBURSTSIZE:
+      Transfer1: [0, "1 transfer"]
+      Transfers2: [1, "2 transfers"]
+      Transfers4: [2, "4 transfers"]
+      Transfers8: [3, "8 transfers"]
+      Transfers16: [4, "16 transfers"]
+      Transfers32: [5, "32 transfers"]
+      Transfers64: [6, "64 transfers"]
+      Transfers128: [7, "128 transfers"]
+      Transfers256: [8, "256 transfers"]
+      Transfers512: [9, "512 transfers"]
+      Transfers1024: [10, "1024 transfers"]
+    PRIORITY:
+      Lower: [0, "Lower priority"]
+      Higher: [1, "Higher priority"]

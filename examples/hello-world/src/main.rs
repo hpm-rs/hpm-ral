@@ -30,7 +30,7 @@ impl<const N: u8> Uart<N> {
         // Set DLAB to 0
         ral::modify_reg!(ral::uart, self.inner, LCR, DLAB: 0);
         // Word length to 8
-        ral::modify_reg!(ral::uart, self.inner, LCR, WLS: 3);
+        ral::modify_reg!(ral::uart, self.inner, LCR, WLS: Bits8);
         // Enable TX and RX FIFO
         ral::modify_reg!(ral::uart, self.inner, FCR, FIFOE: 1);
     }
@@ -62,7 +62,7 @@ fn board_init_uart_pins(ioc: &ral::ioc::IOC0, pioc: &ral::ioc::PIOC10) {
     ral::modify_reg!(ral::ioc, ioc, PAD_PY06_FUNC_CTL, ALT_SELECT: 2);
     ral::modify_reg!(ral::ioc, ioc, PAD_PY07_FUNC_CTL, ALT_SELECT: 2);
     // PY port IO needs to configure PIOC as well
-    ral::modify_reg!(ral::ioc, pioc, PAD_PY07_FUNC_CTL, ALT_SELECT: 3);
+    ral::modify_reg!(ral::ioc, pioc, PAD_PY06_FUNC_CTL, ALT_SELECT: 3);
     ral::modify_reg!(ral::ioc, pioc, PAD_PY07_FUNC_CTL, ALT_SELECT: 3);
 }
 

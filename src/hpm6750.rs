@@ -615,6 +615,52 @@ pub mod dao {
     }
 }
 #[path = "."]
+pub mod dma {
+    #[doc = "HDMA"]
+    pub const HDMA0: *const RegisterBlock = 0xf00c_4000 as *const RegisterBlock;
+    #[doc = "XDMA"]
+    pub const XDMA1: *const RegisterBlock = 0xf304_8000 as *const RegisterBlock;
+    #[path = "blocks/hpm6750/dma.rs"]
+    mod blocks;
+    pub use blocks::*;
+    pub type Instance<const N: u8> = crate::Instance<RegisterBlock, N>;
+    pub type HDMA0 = Instance<0>;
+    impl crate::private::Sealed for HDMA0 {}
+    impl crate::Valid for HDMA0 {}
+    impl HDMA0 {
+        #[doc = r" Acquire a vaild, but possibly aliased, instance."]
+        #[doc = r""]
+        #[doc = r" # Safety"]
+        #[doc = r""]
+        #[doc = r" See [the struct-level safety documentation](crate::Instance)."]
+        #[inline]
+        pub const unsafe fn instance() -> Self {
+            Instance::new(HDMA0)
+        }
+    }
+    pub type XDMA1 = Instance<1>;
+    impl crate::private::Sealed for XDMA1 {}
+    impl crate::Valid for XDMA1 {}
+    impl XDMA1 {
+        #[doc = r" Acquire a vaild, but possibly aliased, instance."]
+        #[doc = r""]
+        #[doc = r" # Safety"]
+        #[doc = r""]
+        #[doc = r" See [the struct-level safety documentation](crate::Instance)."]
+        #[inline]
+        pub const unsafe fn instance() -> Self {
+            Instance::new(XDMA1)
+        }
+    }
+    #[doc = r" Returns the instance number `N` for a peripheral instance."]
+    pub fn number(rb: *const RegisterBlock) -> Option<u8> {
+        [(HDMA0, 0), (XDMA1, 1)]
+            .into_iter()
+            .find(|(ptr, _)| core::ptr::eq(rb, *ptr))
+            .map(|(_, inst)| inst)
+    }
+}
+#[path = "."]
 pub mod dmamux {
     #[doc = "DMAMUX"]
     pub const DMAMUX: *const RegisterBlock = 0xf00c_0000 as *const RegisterBlock;
@@ -1114,52 +1160,6 @@ pub mod hall {
     #[doc = r" Returns the instance number `N` for a peripheral instance."]
     pub fn number(rb: *const RegisterBlock) -> Option<u8> {
         [(HALL0, 0), (HALL1, 1), (HALL2, 2), (HALL3, 3)]
-            .into_iter()
-            .find(|(ptr, _)| core::ptr::eq(rb, *ptr))
-            .map(|(_, inst)| inst)
-    }
-}
-#[path = "."]
-pub mod hdma {
-    #[doc = "HDMA"]
-    pub const HDMA0: *const RegisterBlock = 0xf00c_4000 as *const RegisterBlock;
-    #[doc = "XDMA"]
-    pub const XDMA1: *const RegisterBlock = 0xf304_8000 as *const RegisterBlock;
-    #[path = "blocks/hpm6750/hdma.rs"]
-    mod blocks;
-    pub use blocks::*;
-    pub type Instance<const N: u8> = crate::Instance<RegisterBlock, N>;
-    pub type HDMA0 = Instance<0>;
-    impl crate::private::Sealed for HDMA0 {}
-    impl crate::Valid for HDMA0 {}
-    impl HDMA0 {
-        #[doc = r" Acquire a vaild, but possibly aliased, instance."]
-        #[doc = r""]
-        #[doc = r" # Safety"]
-        #[doc = r""]
-        #[doc = r" See [the struct-level safety documentation](crate::Instance)."]
-        #[inline]
-        pub const unsafe fn instance() -> Self {
-            Instance::new(HDMA0)
-        }
-    }
-    pub type XDMA1 = Instance<1>;
-    impl crate::private::Sealed for XDMA1 {}
-    impl crate::Valid for XDMA1 {}
-    impl XDMA1 {
-        #[doc = r" Acquire a vaild, but possibly aliased, instance."]
-        #[doc = r""]
-        #[doc = r" # Safety"]
-        #[doc = r""]
-        #[doc = r" See [the struct-level safety documentation](crate::Instance)."]
-        #[inline]
-        pub const unsafe fn instance() -> Self {
-            Instance::new(XDMA1)
-        }
-    }
-    #[doc = r" Returns the instance number `N` for a peripheral instance."]
-    pub fn number(rb: *const RegisterBlock) -> Option<u8> {
-        [(HDMA0, 0), (XDMA1, 1)]
             .into_iter()
             .find(|(ptr, _)| core::ptr::eq(rb, *ptr))
             .map(|(_, inst)| inst)
@@ -2775,6 +2775,8 @@ pub struct Instances {
     pub CAN3: can::CAN3,
     pub CONCTL: conctl::CONCTL,
     pub DAO: dao::DAO,
+    pub HDMA0: dma::HDMA0,
+    pub XDMA1: dma::XDMA1,
     pub DMAMUX: dmamux::DMAMUX,
     pub DRAM: dram::DRAM,
     pub ENET0: enet::ENET0,
@@ -2800,8 +2802,6 @@ pub struct Instances {
     pub HALL1: hall::HALL1,
     pub HALL2: hall::HALL2,
     pub HALL3: hall::HALL3,
-    pub HDMA0: hdma::HDMA0,
-    pub XDMA1: hdma::XDMA1,
     pub I2C0: i2c::I2C0,
     pub I2C1: i2c::I2C1,
     pub I2C2: i2c::I2C2,
@@ -2907,6 +2907,8 @@ impl Instances {
             CAN3: can::CAN3::instance(),
             CONCTL: conctl::CONCTL::instance(),
             DAO: dao::DAO::instance(),
+            HDMA0: dma::HDMA0::instance(),
+            XDMA1: dma::XDMA1::instance(),
             DMAMUX: dmamux::DMAMUX::instance(),
             DRAM: dram::DRAM::instance(),
             ENET0: enet::ENET0::instance(),
@@ -2932,8 +2934,6 @@ impl Instances {
             HALL1: hall::HALL1::instance(),
             HALL2: hall::HALL2::instance(),
             HALL3: hall::HALL3::instance(),
-            HDMA0: hdma::HDMA0::instance(),
-            XDMA1: hdma::XDMA1::instance(),
             I2C0: i2c::I2C0::instance(),
             I2C1: i2c::I2C1::instance(),
             I2C2: i2c::I2C2::instance(),

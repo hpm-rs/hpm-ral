@@ -7,3 +7,4 @@ edition = "2021"
 riscv-rt = "0.11.0"
 panic-halt = "0.2.0"
 hpm-ral = { path = "../..", features = ["hpm6750"] }
+hpm6750evkmini = { path = "../hpm6750evkmini" }

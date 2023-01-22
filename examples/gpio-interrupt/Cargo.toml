@@ -11,3 +11,4 @@ panic-halt = "0.2.0"
 critical-section = "1.1"
 plic = { version = "0.0.2", features = ["primitive-id"] }
 lazy_static = { version = "1.4", features = ["spin_no_std"] }
+hpm6750evkmini = { path = "../hpm6750evkmini" }

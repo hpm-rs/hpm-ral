@@ -10,11 +10,11 @@ use super::dma::{self, Dma};
 
 pub struct Uart<'a, const N: u8> {
     inner: uart::Instance<N>,
-    dma: &'a Dma,
+    dma: Option<&'a Dma>,
 }
 
 impl<'a, const N: u8> Uart<'a, N> {
-    pub fn new(uart: uart::Instance<N>, dma: &'a Dma) -> Self {
+    pub fn new(uart: uart::Instance<N>, dma: Option<&'a Dma>) -> Self {
         Self { inner: uart, dma }
     }
 
@@ -33,7 +33,10 @@ impl<'a, const N: u8> Uart<'a, N> {
         // Word length to 8 bits
         modify_reg!(uart, self.inner, LCR, WLS: Bits8);
         // Enable TX and RX FIFO and DMA
-        modify_reg!(uart, self.inner, FCR, FIFOE: 1, DMAE: 1);
+        modify_reg!(uart, self.inner, FCR, FIFOE: 1);
+        if self.dma.is_some() {
+            modify_reg!(uart, self.inner, FCR, DMAE: 1);
+        }
     }
 
     pub fn send_byte(&self, byte: u8) {
@@ -47,10 +50,16 @@ impl<const N: u8> Write for Uart<'_, N> {
         static mut FIRST_FLAG: bool = false;
         match self.inner.deref() as *const uart::RegisterBlock {
             uart::UART0 => unsafe {
-                // TODO: When the transfer completion flag is set, it's not actually completed
-                while FIRST_FLAG && !self.dma.is_complete(dma::UART0_TX_CH) {}
-                self.dma.uart0_start_tx(s.as_bytes(), s.len());
-                FIRST_FLAG = true;
+                if let Some(dma) = self.dma {
+                    // TODO: When the transfer completion flag is set, it's not actually completed
+                    while FIRST_FLAG && !dma.is_complete(dma::UART0_TX_CH) {}
+                    dma.uart0_start_tx(s.as_bytes(), s.len());
+                    FIRST_FLAG = true;
+                } else {
+                    for ch in s.bytes() {
+                        self.send_byte(ch);
+                    }
+                }
                 Ok(())
             },
             _ => Err(core::fmt::Error),

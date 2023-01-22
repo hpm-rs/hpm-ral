@@ -34,5 +34,6 @@ members = [
     "examples/hello-world",
     "examples/gpio-interrupt",
     "examples/uart-dma",
+    "examples/hpm6750evkmini",
     "raltool",
 ]

@@ -8,7 +8,9 @@ extern crate panic_halt;
 use core::cell::RefCell;
 use core::fmt::Write;
 
+use bsp::uart::Uart;
 use critical_section::Mutex;
+use hpm6750evkmini as bsp;
 use hpm_ral as ral;
 use riscv::interrupt;
 use riscv::register;
@@ -16,58 +18,10 @@ use riscv_rt::entry;
 
 use ext_int::PLIC;
 
-struct Uart<const N: u8> {
-    inner: ral::uart::Instance<N>,
-}
-
-impl<const N: u8> Uart<N> {
-    fn new(uart: ral::uart::Instance<N>) -> Self {
-        Self { inner: uart }
-    }
-
-    fn init(&self, buadrate: u32, clock_src_freq: u32) {
-        // Disable all interrupt
-        ral::write_reg!(ral::uart, self.inner, DLM, 0);
-        // Set DLAB to 1
-        ral::modify_reg!(ral::uart, self.inner, LCR, DLAB: 1);
-
-        let div = clock_src_freq / (buadrate * 16);
-        ral::modify_reg!(ral::uart, self.inner, DLL, DLL: div);
-        ral::modify_reg!(ral::uart, self.inner, DLM, DLM: div >> 8);
-
-        // Set DLAB to 0
-        ral::modify_reg!(ral::uart, self.inner, LCR, DLAB: 0);
-        // Word length to 8 bits
-        ral::modify_reg!(ral::uart, self.inner, LCR, WLS: Bits8);
-        // Enable TX and RX FIFO
-        ral::modify_reg!(ral::uart, self.inner, FCR, FIFOE: 1);
-    }
-
-    fn send_byte(&self, byte: u8) {
-        while ral::read_reg!(ral::uart, self.inner, LSR, THRE) == 0 {}
-        ral::write_reg!(ral::uart, self.inner, DLL, DLL: byte as u32);
-    }
-}
-
-impl<const N: u8> Write for Uart<N> {
-    fn write_str(&mut self, s: &str) -> core::fmt::Result {
-        for &ch in s.as_bytes() {
-            self.send_byte(ch);
-        }
-        Ok(())
-    }
-}
-
 #[no_mangle]
 static __FLAG: Mutex<RefCell<bool>> = Mutex::new(RefCell::new(false));
 
-fn board_init(sysctl: &ral::sysctl::SYSCTL) {
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, AXI_SRAM1: Linked);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_0_VALUE, GPIO0_1: Linked);
-    ral::modify_reg!(ral::sysctl, sysctl, GROUP0_1_VALUE, UARTO: Linked);
-    // Set UART0 clock source to osc24 and divider to 1 (24 MHz)
-    ral::modify_reg!(ral::sysctl, sysctl, CLOCK_CLK_TOP_UART0, MUX: 0, DIV: 0);
-
+fn enable_gpio0_int() {
     unsafe {
         register::mie::set_mext();
         interrupt::enable();
@@ -76,7 +30,7 @@ fn board_init(sysctl: &ral::sysctl::SYSCTL) {
     }
 }
 
-fn board_init_gpio_pins(ioc: &ral::ioc::IOC0, gpio: &ral::gpio::GPIO0) {
+fn init_gpio_pins(ioc: &ral::ioc::IOC0, gpio: &ral::gpio::GPIO0) {
     // Select GPIO function
     ral::modify_reg!(ral::ioc, ioc, PAD_PD19_FUNC_CTL, ALT_SELECT: 0);
     ral::modify_reg!(ral::ioc, ioc, PAD_PD13_FUNC_CTL, ALT_SELECT: 0);
@@ -98,14 +52,6 @@ fn board_init_gpio_pins(ioc: &ral::ioc::IOC0, gpio: &ral::gpio::GPIO0) {
     ral::write_reg!(ral::gpio, gpio, IE_GPIOD_SET, 1 << 19);
 }
 
-fn board_init_uart_pins(ioc: &ral::ioc::IOC0, pioc: &ral::ioc::PIOC10) {
-    ral::modify_reg!(ral::ioc, ioc, PAD_PY06_FUNC_CTL, ALT_SELECT: 2);
-    ral::modify_reg!(ral::ioc, ioc, PAD_PY07_FUNC_CTL, ALT_SELECT: 2);
-    // PY port IO needs to configure PIOC as well
-    ral::modify_reg!(ral::ioc, pioc, PAD_PY06_FUNC_CTL, ALT_SELECT: 3);
-    ral::modify_reg!(ral::ioc, pioc, PAD_PY07_FUNC_CTL, ALT_SELECT: 3);
-}
-
 #[export_name = "Gpio0PortDHandler"]
 fn gpio0_portd_handler() {
     critical_section::with(|cs| unsafe {
@@ -120,13 +66,15 @@ fn main() -> ! {
     let ioc = unsafe { ral::ioc::IOC0::instance() };
     let pioc = unsafe { ral::ioc::PIOC10::instance() };
     let gpio0 = unsafe { ral::gpio::GPIO0::instance() };
-    let mut uart = Uart::new(unsafe { ral::uart::UART0::instance() });
+    let mut uart = Uart::new(unsafe { ral::uart::UART0::instance() }, None);
     let mut cnt = 0;
 
-    board_init(&sysctl);
-    board_init_gpio_pins(&ioc, &gpio0);
-    board_init_uart_pins(&ioc, &pioc);
+    bsp::board_init(&sysctl);
+    bsp::board_init_uart_pins(&ioc, &pioc);
+    init_gpio_pins(&ioc, &gpio0);
+
     uart.init(115_200, 24_000_000);
+    enable_gpio0_int();
 
     loop {
         critical_section::with(|cs| {

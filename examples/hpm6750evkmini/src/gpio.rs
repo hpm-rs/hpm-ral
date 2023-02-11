@@ -1,0 +1,138 @@
+#![allow(dead_code)]
+#![allow(unused)]
+
+use core::marker::PhantomData;
+use core::ops::Deref;
+
+use hpm_ral::{gpio, ioc};
+use hpm_ral::{modify_reg, read_reg, write_reg};
+
+pub struct Floating;
+pub struct PullUp;
+pub struct PullDown;
+pub struct Input<MODE = Floating> {
+    _mode: PhantomData<MODE>,
+}
+
+pub struct PushPull;
+pub struct OpenDrain;
+pub struct Output<MODE = PushPull> {
+    _mode: PhantomData<MODE>,
+}
+
+pub struct Pin<const PORT: char, const PIN: u8, MODE = Input<Floating>> {
+    gpio: *const gpio::RegisterBlock,
+    ioc: *const ioc::RegisterBlock,
+    _mode: PhantomData<MODE>,
+}
+
+macro_rules! pin {
+    ($PXX:ident: $port:literal, $pin:literal, $FUNC_CTL:ident, $PAD_CTL:ident, $OE_SET:ident) => {
+        pub type $PXX<MODE = Input<Floating>> = Pin<$port, $pin, MODE>;
+
+        impl $PXX {
+            // For each pin
+            fn new<const N: u8, const M: u8>(
+                gpio: &gpio::Instance<N>,
+                ioc: &ioc::Instance<M>,
+            ) -> Self {
+                Pin {
+                    gpio: gpio.deref(),
+                    ioc: ioc.deref(),
+                    _mode: PhantomData,
+                }
+            }
+
+            #[inline]
+            pub fn into_push_pull_output(self) -> $PXX<Output<PushPull>> {
+                unsafe {
+                    let gpio = &*self.gpio;
+                    let ioc = &*self.ioc;
+                    write_reg!(ioc, &ioc, $FUNC_CTL, ALT_SELECT: 0);
+                    write_reg!(ioc, &ioc, $PAD_CTL, 0);
+                    write_reg!(gpio, &gpio, $OE_SET, 1 << $pin);
+                }
+                $PXX {
+                    gpio: self.gpio,
+                    ioc: self.ioc,
+                    _mode: PhantomData,
+                }
+            }
+        }
+    };
+}
+
+macro_rules! impl_port {
+    ($port:literal, $DO_SET:ident, $DO_CLEAR:ident, $DO_TOGGLE:ident) => {
+        impl<const PIN: u8> Pin<$port, PIN, Output<PushPull>> {
+            // For port
+            #[inline]
+            pub fn set_high(&self) {
+                unsafe {
+                    let gpio = &*self.gpio;
+                    write_reg!(gpio, &gpio, $DO_SET, 1 << PIN);
+                }
+            }
+
+            #[inline]
+            pub fn set_low(&self) {
+                unsafe {
+                    let gpio = &*self.gpio;
+                    write_reg!(gpio, &gpio, $DO_CLEAR, 1 << PIN);
+                }
+            }
+
+            #[inline]
+            pub fn toggle(&self) {
+                unsafe {
+                    let gpio = &*self.gpio;
+                    write_reg!(gpio, &gpio, $DO_TOGGLE, 1 << PIN);
+                }
+            }
+        }
+    };
+}
+
+macro_rules! gpio {
+    ($(
+        $port:literal: {
+            $OE_SET:ident,
+            $DO_SET:ident,
+            $DO_CLEAR:ident,
+            $DO_TOGGLE:ident,
+            [$(($PXX:ident, $pxx:ident, $pin:literal, $FUNC_CTL:ident, $PAD_CTL:ident)),*]
+        }
+    ),*) => {
+        $(
+            impl_port!($port, $DO_SET, $DO_CLEAR, $DO_TOGGLE);
+
+            $(pin!($PXX: $port, $pin, $FUNC_CTL, $PAD_CTL, $OE_SET);)*
+        )*
+
+        pub struct Gpio {
+            $(
+                $(pub $pxx: $PXX,)*
+            )*
+        }
+
+        impl Gpio {
+            pub fn new<const N: u8, const M: u8>(gpio: gpio::Instance<N>, ioc: ioc::Instance<M>) -> Self {
+                Gpio {
+                    $(
+                        $($pxx: $PXX::new(&gpio, &ioc),)*
+                    )*
+                }
+            }
+        }
+    };
+}
+
+/// Add pins as needed to reduce compile time
+gpio!(
+    'D': {
+        OE_GPIOD_SET, DO_GPIOD_SET, DO_GPIOD_CLEAR, DO_GPIOD_TOGGLE,
+        [
+            (PD15, pd15, 15, PAD_PD15_FUNC_CTL, PAD_PD15_PAD_CTL)
+        ]
+    }
+);

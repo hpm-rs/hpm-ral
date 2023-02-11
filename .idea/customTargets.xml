@@ -4,7 +4,7 @@
     <target id="1309ed3c-7b81-484f-be92-a42091f62efe" name="blink" defaultType="TOOL">
       <configuration id="2a6f0c7c-00f3-4954-8263-4a3167505907" name="blink">
         <build type="TOOL">
-          <tool actionId="Tool_External Tools_cargo build uart-dma" />
+          <tool actionId="Tool_External Tools_cargo build blink" />
         </build>
         <clean type="TOOL">
           <tool actionId="Tool_External Tools_cargo clean" />

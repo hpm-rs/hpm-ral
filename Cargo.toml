@@ -28,6 +28,9 @@ test = false
 rt = []
 hpm6750 = []
 
+[profile.release]
+debug = true
+
 [workspace]
 members = [
     "examples/blink",
@@ -35,5 +38,6 @@ members = [
     "examples/gpio-interrupt",
     "examples/uart-dma",
     "examples/hpm6750evkmini",
+    "examples/spi-lcd",
     "raltool",
 ]

@@ -34,4 +34,11 @@
       <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
     </exec>
   </tool>
+  <tool name="cargo build spi-lcd" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="cargo" />
+      <option name="PARAMETERS" value="build --release" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/examples/spi-lcd" />
+    </exec>
+  </tool>
 </toolSet>

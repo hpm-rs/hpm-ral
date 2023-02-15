@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/raltool/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/uart-dma/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/hpm6750evkmini/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/spi-lcd/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -41,5 +41,15 @@
         </clean>
       </configuration>
     </target>
+    <target id="981a1e78-6a87-4b98-8c3f-3e61fa308095" name="spi-lcd" defaultType="TOOL">
+      <configuration id="3196962e-7610-484e-be50-231abea45f56" name="spi-lcd">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_cargo build spi-lcd" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_cargo clean" />
+        </clean>
+      </configuration>
+    </target>
   </component>
 </project>

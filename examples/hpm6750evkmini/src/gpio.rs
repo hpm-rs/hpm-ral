@@ -7,6 +7,8 @@ use core::ops::Deref;
 use hpm_ral::{gpio, ioc};
 use hpm_ral::{modify_reg, read_reg, write_reg};
 
+use crate::hal::digital::v2::OutputPin;
+
 pub struct Floating;
 pub struct PullUp;
 pub struct PullDown;
@@ -67,7 +69,7 @@ macro_rules! impl_port {
         impl<const PIN: u8> Pin<$port, PIN, Output<PushPull>> {
             // For port
             #[inline]
-            pub fn set_high(&self) {
+            fn _set_high(&self) {
                 unsafe {
                     let gpio = &*self.gpio;
                     write_reg!(gpio, &gpio, $DO_SET, 1 << PIN);
@@ -75,7 +77,7 @@ macro_rules! impl_port {
             }
 
             #[inline]
-            pub fn set_low(&self) {
+            fn _set_low(&self) {
                 unsafe {
                     let gpio = &*self.gpio;
                     write_reg!(gpio, &gpio, $DO_CLEAR, 1 << PIN);
@@ -88,6 +90,20 @@ macro_rules! impl_port {
                     let gpio = &*self.gpio;
                     write_reg!(gpio, &gpio, $DO_TOGGLE, 1 << PIN);
                 }
+            }
+        }
+
+        impl<const PIN: u8> OutputPin for Pin<$port, PIN, Output<PushPull>> {
+            type Error = ();
+
+            fn set_low(&mut self) -> Result<(), Self::Error> {
+                self._set_low();
+                Ok(())
+            }
+
+            fn set_high(&mut self) -> Result<(), Self::Error> {
+                self._set_high();
+                Ok(())
             }
         }
     };
@@ -129,9 +145,16 @@ macro_rules! gpio {
 
 /// Add pins as needed to reduce compile time
 gpio!(
+    'C': {
+        OE_GPIOC_SET, DO_GPIOC_SET, DO_GPIOC_CLEAR, DO_GPIOC_TOGGLE,
+        [
+            (PC03, pc03,  3, PAD_PC03_FUNC_CTL, PAD_PC03_PAD_CTL)
+        ]
+    },
     'D': {
         OE_GPIOD_SET, DO_GPIOD_SET, DO_GPIOD_CLEAR, DO_GPIOD_TOGGLE,
         [
+            (PD14, pd14, 14, PAD_PD14_FUNC_CTL, PAD_PD14_PAD_CTL),
             (PD15, pd15, 15, PAD_PD15_FUNC_CTL, PAD_PD15_PAD_CTL)
         ]
     }

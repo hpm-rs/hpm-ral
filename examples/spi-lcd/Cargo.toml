@@ -1,0 +1,17 @@
+[package]
+name = "spi-lcd"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hpm-ral = { path = "../..", features = ["hpm6750", "rt"] }
+riscv = { version = "0.10", features = ["critical-section-single-hart"] }
+riscv-rt = "0.11"
+panic-halt = "0.2"
+embedded-hal = "0.2"
+hpm6750evkmini = { path = "../hpm6750evkmini" }
+display-interface-spi = "0.4"
+st7789 = "0.7"
+embedded-graphics = "0.7"

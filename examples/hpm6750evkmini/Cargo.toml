@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 hpm-ral = { path = "../../", features = ["hpm6750"] }
+embedded-hal = "0.2"
+nb = "1.0"

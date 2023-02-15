@@ -70,10 +70,10 @@ fn main() -> ! {
     let mut cnt = 0;
 
     bsp::board_init(&sysctl);
-    bsp::board_init_uart_pins(&ioc, &pioc);
+    bsp::board_init_uart0_pins(&ioc, &pioc);
     init_gpio_pins(&ioc, &gpio0);
 
-    uart.init(115_200, 24_000_000);
+    uart.setup(115_200, 24_000_000);
     enable_gpio0_int();
 
     loop {

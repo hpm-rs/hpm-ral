@@ -1,0 +1,76 @@
+SPI0:
+  TRANSFMT:
+    CPHA:
+      Odd: [0, "Sampling data at odd SCLK edges"]
+      Even: [1, "Sampling data at even SCLK edges"]
+    CPOL:
+      Low: [0, "SCLK is low in the idle states"]
+      High: [1, "SCLK is high in the idle states"]
+    SLVMODE:
+      Master: [0, "Master mode"]
+      Slave: [1, "Slave mode"]
+    LSB:
+      MSB: [0, "Most significant bit first"]
+      LSB: [1, "Least significant bit first"]
+    MOSIBIDIR:
+      UniDirectional: [0, "MOSI is uni-directional signal in regular mode"]
+      BiDirectional: [1, "MOSI is bi-directional signal in regular mode"]
+    DATAMERGE:
+      Disable: [0, "Disable data merge"]
+      Enable: [1, "Enable data merge"]
+    ADDRLEN:
+      Byte1: [0, "1 byte"]
+      Bytes2: [1, "2 byte"]
+      Bytes3: [2, "3 byte"]
+      Bytes4: [3, "4 byte"]
+  DIRECTIO:
+    DIRECTIOEN:
+      Disable: [0, "Disable Direct IO"]
+      Enable: [1, "Enable Direct IO"]
+  TRANSCTRL:
+    TOKENVALUE:
+      Token0x00: [0, "Token value is 0x00"]
+      Token0x69: [1, "Token value is 0x69"]
+    TOKENEN:
+      Disable: [0, "Disable the one-byte special token"]
+      Enable: [1, "Enable the one-byte special token"]
+    DUALQUAD:
+      Single: [0, "Regular(single) mode"]
+      Dual: [1, "Dual I/O mode"]
+      Quad: [3, "Quad I/O mode"]
+    TRANSMODE:
+      ReadWhileWrite: [0, "Write and read at the same time"]
+      WriteOnly: [1, "Write only"]
+      ReadOnly: [2, "Read only"]
+      ReadAfterWrite: [3, "Write, Read"] 
+      WriteAfterRead: [4, "Read, Write"]
+      WriteDummyRead: [5, "Write, Dummy, Read"]
+      ReadDummyWrite: [6, "Read, Dummy, Write"]
+      NoneData: [7, "None data (must enable CmdEn or AddrEn in master mode)"]
+      DummyWrite: [8, "Dummy, Write"]
+      DummyRead: [9, "Dummy, Read"]
+    ADDRFMT:
+      Single: [0, "Address phase is the regular (single) mode"]
+      DataPhase: [1, "The format of the address phase is the same as the data phase (DualQuad)"]
+    ADDREN:
+      Disable: [0, "Disable the address phase"]
+      Enable: [1, "Enable the address phase"]
+    CMDEN:
+      Disable: [0, "Disable the command phase"]
+      Enable: [1, "Enable the command phase"]
+    SLVDATAONLY:
+      Disable: [0, "Disable the data-only mode"]
+      Enable: [1, "Enable the data-only mode"]
+  CTRL:
+    SPIRST:
+      Reset: [1, "Reset SPI controller. It is automatically cleared to 0 afer the reset operation completes."]
+    RXFIFORST:
+      Reset: [1, "Reset receive FIFO. It is automatically cleared to 0 afer the reset operation completes."]
+    TXFIFORST:
+      Reset: [1, "Reset transmit FIFO. It is automatically cleared to 0 afer the reset operation completes."]
+    RXDMAEN:
+      Disable: [0, "Disable RX DMA"]
+      Enable: [1, "Enable RX DMA"]
+    TXDMAEN:
+      Disable: [0, "Disable TX DMA"]
+      Enable: [1, "Enable TX DMA"]

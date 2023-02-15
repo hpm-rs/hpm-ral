@@ -19,8 +19,8 @@ fn main() -> ! {
     let mut cnt = 0;
 
     bsp::board_init(&sysctl);
-    bsp::board_init_uart_pins(&ioc, &pioc);
-    uart.init(115_200, 24_000_000);
+    bsp::board_init_uart0_pins(&ioc, &pioc);
+    uart.setup(115_200, 24_000_000);
 
     loop {
         write!(uart, "Hello, hpm-ral: {cnt}\r\n").unwrap();

@@ -8,6 +8,7 @@ _include:
   - peripheral/ioc.yaml
   - peripheral/otp.yaml
   - peripheral/rtc.yaml
+  - peripheral/spi.yaml
   - peripheral/sysctl.yaml
   - peripheral/tmr.yaml
   - peripheral/uart.yaml

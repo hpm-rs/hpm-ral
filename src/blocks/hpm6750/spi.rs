@@ -42,7 +42,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Sampling data at odd SCLK edges"]
+            pub const Odd: u32 = 0;
+            #[doc = "Sampling data at even SCLK edges"]
+            pub const Even: u32 = 0x01;
+        }
     }
     #[doc = "SPI Clock Polarity 0x0: SCLK is LOW in the idle states 0x1: SCLK is HIGH in the idle states"]
     pub mod CPOL {
@@ -50,7 +55,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "SCLK is low in the idle states"]
+            pub const Low: u32 = 0;
+            #[doc = "SCLK is high in the idle states"]
+            pub const High: u32 = 0x01;
+        }
     }
     #[doc = "SPI Master/Slave mode selection 0x0: Master mode 0x1: Slave mode"]
     pub mod SLVMODE {
@@ -58,7 +68,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Master mode"]
+            pub const Master: u32 = 0;
+            #[doc = "Slave mode"]
+            pub const Slave: u32 = 0x01;
+        }
     }
     #[doc = "Transfer data with the least significant bit first 0x0: Most significant bit first 0x1: Least significant bit first"]
     pub mod LSB {
@@ -66,7 +81,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Most significant bit first"]
+            pub const Msb: u32 = 0;
+            #[doc = "Least significant bit first"]
+            pub const Lsb: u32 = 0x01;
+        }
     }
     #[doc = "Bi-directional MOSI in regular (single) mode 0x0: MOSI is uni-directional signal in regular mode. 0x1: MOSI is bi-directional signal in regular mode. This bi-directional signal replaces the two"]
     pub mod MOSIBIDIR {
@@ -74,7 +94,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "MOSI is uni-directional signal in regular mode"]
+            pub const UniDirectional: u32 = 0;
+            #[doc = "MOSI is bi-directional signal in regular mode"]
+            pub const BiDirectional: u32 = 0x01;
+        }
     }
     #[doc = "Enable Data Merge mode, which does automatic data split on write and data coalescing on read. This bit only takes effect when DataLen = 0x7. Under Data Merge mode, each write to the Data Register will transmit all fourbytes of the write data; each read from the Data Register will retrieve four bytes of received data as a single word data. When Data Merge mode is disabled, only the least (DataLen+1) significient bits of the Data Register are valid for read/write operations; no automatic data split/coalescing will be performed."]
     pub mod DATAMERGE {
@@ -82,7 +107,12 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable data merge"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable data merge"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "The length of each data unit in bits The actual bit number of a data unit is (DataLen + 1)"]
     pub mod DATALEN {
@@ -98,7 +128,16 @@ pub mod TRANSFMT {
         pub const mask: u32 = 0x03 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "1 byte"]
+            pub const Byte1: u32 = 0;
+            #[doc = "2 byte"]
+            pub const Bytes2: u32 = 0x01;
+            #[doc = "3 byte"]
+            pub const Bytes3: u32 = 0x02;
+            #[doc = "4 byte"]
+            pub const Bytes4: u32 = 0x03;
+        }
     }
 }
 #[doc = "Direct IO Control Register"]
@@ -253,7 +292,12 @@ pub mod DIRECTIO {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable Direct IO"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable Direct IO"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "Transfer Control Register"]
@@ -280,7 +324,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Token value is 0x00"]
+            pub const Token0x00: u32 = 0;
+            #[doc = "Token value is 0x69"]
+            pub const Token0x69: u32 = 0x01;
+        }
     }
     #[doc = "Transfer count for write data WrTranCnt indicates the number of units of data to be transmitted to the SPI bus from the Data Register. The actual transfer count is (WrTranCnt+1). WrTranCnt only takes effect when TransMode is 0, 1, 3, 4, 5, 6 or 8. The size (bit-width) of a data unit is defined by the DataLen field of the Transfer Format Register. For TransMode 0, WrTranCnt must be equal to RdTranCnt."]
     pub mod WRTRANCNT {
@@ -296,7 +345,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable the one-byte special token"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable the one-byte special token"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "SPI data phase format 0x0: Regular (Single) mode 0x1: Dual I/O mode 0x2: Quad I/O mode 0x3: Reserved"]
     pub mod DUALQUAD {
@@ -304,7 +358,14 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x03 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Regular(single) mode"]
+            pub const Single: u32 = 0;
+            #[doc = "Dual I/O mode"]
+            pub const Dual: u32 = 0x01;
+            #[doc = "Quad I/O mode"]
+            pub const Quad: u32 = 0x03;
+        }
     }
     #[doc = "Transfer mode The transfer sequence could be 0x0: Write and read at the same time 0x1: Write only 0x2: Read only 0x3: Write, Read 0x4: Read, Write 0x5: Write, Dummy, Read 0x6: Read, Dummy, Write 0x7: None Data (must enable CmdEn or AddrEn in master mode) 0x8: Dummy, Write 0x9: Dummy, Read 0xa~0xf: Reserved"]
     pub mod TRANSMODE {
@@ -312,7 +373,28 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x0f << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Write and read at the same time"]
+            pub const ReadWhileWrite: u32 = 0;
+            #[doc = "Write only"]
+            pub const WriteOnly: u32 = 0x01;
+            #[doc = "Read only"]
+            pub const ReadOnly: u32 = 0x02;
+            #[doc = "Write, Read"]
+            pub const ReadAfterWrite: u32 = 0x03;
+            #[doc = "Read, Write"]
+            pub const WriteAfterRead: u32 = 0x04;
+            #[doc = "Write, Dummy, Read"]
+            pub const WriteDummyRead: u32 = 0x05;
+            #[doc = "Read, Dummy, Write"]
+            pub const ReadDummyWrite: u32 = 0x06;
+            #[doc = "None data (must enable CmdEn or AddrEn in master mode)"]
+            pub const NoneData: u32 = 0x07;
+            #[doc = "Dummy, Write"]
+            pub const DummyWrite: u32 = 0x08;
+            #[doc = "Dummy, Read"]
+            pub const DummyRead: u32 = 0x09;
+        }
     }
     #[doc = "SPI address phase format (Master mode only) 0x0: Address phase is the regular (single) mode 0x1: The format of the address phase is the same as the data phase (DualQuad)."]
     pub mod ADDRFMT {
@@ -320,7 +402,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Address phase is the regular (single) mode"]
+            pub const Single: u32 = 0;
+            #[doc = "The format of the address phase is the same as the data phase (DualQuad)"]
+            pub const DataPhase: u32 = 0x01;
+        }
     }
     #[doc = "SPI address phase enable (Master mode only) 0x0: Disable the address phase 0x1: Enable the address phase"]
     pub mod ADDREN {
@@ -328,7 +415,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable the address phase"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable the address phase"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "SPI command phase enable (Master mode only) 0x0: Disable the command phase 0x1: Enable the command phase"]
     pub mod CMDEN {
@@ -336,7 +428,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable the command phase"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable the command phase"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "Data-only mode (slave mode only) 0x0: Disable the data-only mode 0x1: Enable the data-only mode Note: This mode only works in the uni-directional regular (single) mode so MOSIBiDir, DualQuad and TransMode should be set to 0."]
     pub mod SLVDATAONLY {
@@ -344,7 +441,12 @@ pub mod TRANSCTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable the data-only mode"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable the data-only mode"]
+            pub const Enable: u32 = 0x01;
+        }
     }
 }
 #[doc = "Command Register"]
@@ -388,7 +490,10 @@ pub mod CTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Reset SPI controller. It is automatically cleared to 0 afer the reset operation completes."]
+            pub const Reset: u32 = 0x01;
+        }
     }
     #[doc = "Receive FIFO reset Write 1 to reset. It is automatically cleared to 0 after the reset operation completes."]
     pub mod RXFIFORST {
@@ -396,7 +501,10 @@ pub mod CTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Reset receive FIFO. It is automatically cleared to 0 afer the reset operation completes."]
+            pub const Reset: u32 = 0x01;
+        }
     }
     #[doc = "Transmit FIFO reset Write 1 to reset. It is automatically cleared to 0 after the reset operation completes."]
     pub mod TXFIFORST {
@@ -404,7 +512,10 @@ pub mod CTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Reset transmit FIFO. It is automatically cleared to 0 afer the reset operation completes."]
+            pub const Reset: u32 = 0x01;
+        }
     }
     #[doc = "RX DMA enable"]
     pub mod RXDMAEN {
@@ -412,7 +523,12 @@ pub mod CTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable RX DMA"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable RX DMA"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "TX DMA enable"]
     pub mod TXDMAEN {
@@ -420,7 +536,12 @@ pub mod CTRL {
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}
         pub mod W {}
-        pub mod RW {}
+        pub mod RW {
+            #[doc = "Disable TX DMA"]
+            pub const Disable: u32 = 0;
+            #[doc = "Enable TX DMA"]
+            pub const Enable: u32 = 0x01;
+        }
     }
     #[doc = "Receive (RX) FIFO Threshold The RXFIFOInt interrupt or DMA request would be issued for consuming the RX FIFO when the RX data count is more than or equal to the RX FIFO threshold."]
     pub mod RXTHRES {

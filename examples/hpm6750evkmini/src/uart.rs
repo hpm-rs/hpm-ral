@@ -18,7 +18,7 @@ impl<'a, const N: u8> Uart<'a, N> {
         Self { inner: uart, dma }
     }
 
-    pub fn init(&self, buadrate: u32, clock_src_freq: u32) {
+    pub fn setup(&self, buadrate: u32, clock_src_freq: u32) {
         // Disable all interrupt
         write_reg!(uart, self.inner, DLM, 0);
         // Set DLAB to 1
@@ -48,6 +48,7 @@ impl<'a, const N: u8> Uart<'a, N> {
 impl<const N: u8> Write for Uart<'_, N> {
     fn write_str(&mut self, s: &str) -> core::fmt::Result {
         static mut FIRST_FLAG: bool = false;
+
         match self.inner.deref() as *const uart::RegisterBlock {
             uart::UART0 => unsafe {
                 if let Some(dma) = self.dma {

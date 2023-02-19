@@ -22,6 +22,12 @@ pub struct Output<MODE = PushPull> {
     _mode: PhantomData<MODE>,
 }
 
+#[derive(Clone, Copy)]
+pub enum PinState {
+    Low = 0,
+    High,
+}
+
 pub struct Pin<const PORT: char, const PIN: u8, MODE = Input<Floating>> {
     gpio: *const gpio::RegisterBlock,
     ioc: *const ioc::RegisterBlock,
@@ -67,7 +73,14 @@ macro_rules! pin {
 macro_rules! impl_port {
     ($port:literal, $DO_SET:ident, $DO_CLEAR:ident, $DO_TOGGLE:ident) => {
         impl<const PIN: u8> Pin<$port, PIN, Output<PushPull>> {
-            // For port
+            #[inline]
+            pub fn set_state(&self, state: PinState) {
+                match state {
+                    PinState::Low => self._set_low(),
+                    PinState::High => self._set_high(),
+                }
+            }
+
             #[inline]
             fn _set_high(&self) {
                 unsafe {
@@ -145,6 +158,14 @@ macro_rules! gpio {
 
 /// Add pins as needed to reduce compile time
 gpio!(
+    'B': {
+        OE_GPIOB_SET, DO_GPIOB_SET, DO_GPIOB_CLEAR, DO_GPIOB_TOGGLE,
+        [
+            (PB18, pb18,  18, PAD_PB18_FUNC_CTL, PAD_PB18_PAD_CTL),
+            (PB19, pb19,  19, PAD_PB19_FUNC_CTL, PAD_PB19_PAD_CTL),
+            (PB20, pb20,  20, PAD_PB20_FUNC_CTL, PAD_PB20_PAD_CTL)
+        ]
+    },
     'C': {
         OE_GPIOC_SET, DO_GPIOC_SET, DO_GPIOC_CLEAR, DO_GPIOC_TOGGLE,
         [

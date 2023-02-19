@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-riscv-rt = "0.11.0"
-panic-halt = "0.2.0"
+riscv = "0.10"
+embedded-hal = "0.2"
+hpm-rt = { git = "https://github.com/hpm-rs/hpm-rt", features = ["flash-xip"] }
 hpm-ral = { path = "../..", features = ["hpm6750"] }
 hpm6750evkmini = { path = "../hpm6750evkmini" }
+panic-halt = "0.2.0"

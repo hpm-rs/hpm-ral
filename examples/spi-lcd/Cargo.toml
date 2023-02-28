@@ -7,8 +7,8 @@ edition = "2021"
 
 [dependencies]
 hpm-ral = { path = "../..", features = ["hpm6750", "rt"] }
-riscv = { version = "0.10", features = ["critical-section-single-hart"] }
-riscv-rt = "0.11"
+riscv = { version = "0.10" }
+hpm-rt = { git = "https://github.com/hpm-rs/hpm-rt", features = ["flash-xip"] }
 panic-halt = "0.2"
 embedded-hal = "0.2"
 hpm6750evkmini = { path = "../hpm6750evkmini" }

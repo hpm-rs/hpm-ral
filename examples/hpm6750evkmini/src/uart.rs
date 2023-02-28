@@ -39,30 +39,32 @@ impl<'a, const N: u8> Uart<'a, N> {
         }
     }
 
+    #[inline]
+    fn is_tx_fifo_empty(&self) -> bool {
+        return read_reg!(uart, self.inner, LSR, THRE) == 1;
+    }
+
+    #[inline]
     pub fn send_byte(&self, byte: u8) {
-        while read_reg!(uart, self.inner, LSR, THRE) == 0 {}
+        while !self.is_tx_fifo_empty() {}
         write_reg!(uart, self.inner, DLL, DLL: byte as u32);
     }
 }
 
 impl<const N: u8> Write for Uart<'_, N> {
     fn write_str(&mut self, s: &str) -> core::fmt::Result {
-        static mut FIRST_FLAG: bool = false;
-
         match self.inner.deref() as *const uart::RegisterBlock {
-            uart::UART0 => unsafe {
+            uart::UART0 => {
                 if let Some(dma) = self.dma {
-                    // TODO: When the transfer completion flag is set, it's not actually completed
-                    while FIRST_FLAG && !dma.is_complete(dma::UART0_TX_CH) {}
+                    while dma.is_enabled(dma::UART0_TX_CH) || !self.is_tx_fifo_empty() {}
                     dma.uart0_start_tx(s.as_bytes(), s.len());
-                    FIRST_FLAG = true;
                 } else {
                     for ch in s.bytes() {
                         self.send_byte(ch);
                     }
                 }
                 Ok(())
-            },
+            }
             _ => Err(core::fmt::Error),
         }
     }

@@ -27,6 +27,5 @@ fn main() -> ! {
     loop {
         write!(uart, "Hello hpm-ral: {cnt}\r\n").unwrap();
         cnt += 1;
-        for _ in 0..50000 {}
     }
 }

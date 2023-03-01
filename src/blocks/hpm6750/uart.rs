@@ -28,7 +28,9 @@ pub mod CFG {
     pub mod FIFOSIZE {
         pub const offset: u32 = 0;
         pub const mask: u32 = 0x03 << offset;
-        pub mod R {
+        pub mod R {}
+        pub mod W {}
+        pub mod RW {
             #[doc = "16-byte FIFO"]
             pub const Bytes16: u32 = 0;
             #[doc = "32-byte FIFO"]
@@ -38,8 +40,6 @@ pub mod CFG {
             #[doc = "128-byte FIFO"]
             pub const Bytes128: u32 = 0x03;
         }
-        pub mod W {}
-        pub mod RW {}
     }
 }
 #[doc = "Over Sample Control Register"]

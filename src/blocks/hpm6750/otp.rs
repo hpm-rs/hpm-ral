@@ -1,4 +1,4 @@
-#[doc = "OTPSHW"]
+#[doc = "OTP"]
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "Fuse shadow registers"]

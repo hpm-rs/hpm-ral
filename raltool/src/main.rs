@@ -3,6 +3,7 @@
 use anyhow::{bail, Context, Result};
 use clap::Parser;
 use log::*;
+use raltool::generate::Architecture;
 use raltool::{combine, generate, svd2ir};
 use rayon::prelude::*;
 use regex::Regex;
@@ -200,7 +201,7 @@ fn gen(mut args: Generate) -> Result<()> {
     let generate_opts = generate::Options {
         module_root: PathBuf::from(args.output_directory).join("lib.rs"),
         weak_syms: true,
-        arch: Default::default(),
+        arch: Architecture::Default,
     };
 
     let combination = combine::combine(&irs);
@@ -337,7 +338,7 @@ fn gen_block(args: GenBlock) -> Result<()> {
     let generate_opts = generate::Options {
         module_root: std::path::PathBuf::from(&args.output),
         weak_syms: false,
-        arch: Default::default(),
+        arch: Architecture::Default,
     };
     generate::render(&ir, &generate_opts)?;
     Ok(())

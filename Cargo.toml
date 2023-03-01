@@ -2,18 +2,13 @@
 name = "hpm-ral"
 authors = ["tfx2001 <tfx2001@outlook.com>"]
 description = "Register access layer for all HPMicro microcontrollers"
-repository = "https://github.com/tfx2001/hpm-ral"
+repository = "https://github.com/hpm-rs/hpm-ral"
 readme = "README.md"
 keywords = ["hpmicro", "embedded", "no_std"]
 categories = ["embedded", "no-std"]
 license = "MIT"
 edition = "2021"
-include = [
-    "src/*",
-    "build.rs",
-    "Cargo.toml",
-    "doc.md",
-]
+include = ["src/*", "build.rs", "Cargo.toml", "doc.md"]
 version = "0.0.1"
 
 [dependencies]
@@ -28,16 +23,5 @@ test = false
 rt = []
 hpm6750 = []
 
-[profile.release]
-debug = true
-
 [workspace]
-members = [
-    "examples/blink",
-    "examples/hello-world",
-    "examples/gpio-interrupt",
-    "examples/uart-dma",
-    "examples/hpm6750evkmini",
-    "examples/spi-lcd",
-    "raltool",
-]
+members = ["raltool"]

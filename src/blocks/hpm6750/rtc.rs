@@ -1,4 +1,4 @@
-#[doc = "RTCSHW"]
+#[doc = "RTC"]
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "Second counter"]

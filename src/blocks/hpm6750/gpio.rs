@@ -1,4 +1,4 @@
-#[doc = "FGPIO"]
+#[doc = "GPIO0"]
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "GPIO input value"]

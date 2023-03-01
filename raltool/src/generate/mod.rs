@@ -127,9 +127,8 @@ pub enum CommonModule {
     External(TokenStream),
 }
 
-#[derive(Clone, Copy, Default, PartialEq)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Architecture {
-    #[default]
     Default,
     CortexM,
     RiscV,
@@ -254,7 +253,7 @@ pub fn render(ir: &IR, opts: &Options) -> Result<()> {
                 .filter_map(|peripheral| peripheral.block.as_ref()),
         );
 
-        opts.arch = Architecture::default();
+        opts.arch = Architecture::Default;
         if let Some(c) = &d.cpu {
             let cpus: [(regex::Regex, Architecture); 2] = [
                 (regex::Regex::new(r"CM\w+").unwrap(), Architecture::CortexM),

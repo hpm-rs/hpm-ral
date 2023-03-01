@@ -763,7 +763,7 @@ pub mod enet {
 #[path = "."]
 pub mod gpio {
     pub const FGPIO10: *const RegisterBlock = 0x000c_0000 as *const RegisterBlock;
-    #[doc = "FGPIO"]
+    #[doc = "GPIO0"]
     pub const GPIO0: *const RegisterBlock = 0xf000_0000 as *const RegisterBlock;
     #[doc = "GPIO1"]
     pub const GPIO1: *const RegisterBlock = 0xf000_4000 as *const RegisterBlock;
@@ -891,7 +891,7 @@ pub mod gptmr {
     pub const NTMR10: *const RegisterBlock = 0xf201_0000 as *const RegisterBlock;
     #[doc = "NTMR1"]
     pub const NTMR11: *const RegisterBlock = 0xf201_4000 as *const RegisterBlock;
-    #[doc = "NTMR0"]
+    #[doc = "GPTMR0"]
     pub const GPTMR0: *const RegisterBlock = 0xf300_0000 as *const RegisterBlock;
     #[doc = "GPTMR1"]
     pub const GPTMR1: *const RegisterBlock = 0xf300_4000 as *const RegisterBlock;
@@ -1521,7 +1521,7 @@ pub mod mono {
 #[path = "."]
 pub mod otp {
     pub const OTPSHW1: *const RegisterBlock = 0xf408_0000 as *const RegisterBlock;
-    #[doc = "OTPSHW"]
+    #[doc = "OTP"]
     pub const OTP0: *const RegisterBlock = 0xf40c_8000 as *const RegisterBlock;
     #[path = "blocks/hpm6750/otp.rs"]
     mod blocks;
@@ -2019,7 +2019,7 @@ pub mod rng {
 #[path = "."]
 pub mod rtc {
     pub const RTCSHW1: *const RegisterBlock = 0xf501_c000 as *const RegisterBlock;
-    #[doc = "RTCSHW"]
+    #[doc = "RTC"]
     pub const RTC0: *const RegisterBlock = 0xf504_4000 as *const RegisterBlock;
     #[path = "blocks/hpm6750/rtc.rs"]
     mod blocks;

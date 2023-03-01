@@ -1,4 +1,4 @@
-#[doc = "NTMR0"]
+#[doc = "GPTMR0"]
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "Control Register"]

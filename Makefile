@@ -1,3 +1,7 @@
+ifeq ($(TARGET),)
+	TARGET := riscv32imac-unknown-none-elf
+endif
+
 .PHONY: all patch
 
 all: patch

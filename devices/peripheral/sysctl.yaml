@@ -27,7 +27,7 @@ SYSCTL:
       ILM_DLM1:
         bitOffset: 7
         bitWidth: 1
-      MCHTMRO:
+      MCHTMR0:
         bitOffset: 8
         bitWidth: 1
       MCHTMR1:

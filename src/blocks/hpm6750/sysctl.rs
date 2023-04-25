@@ -6232,7 +6232,7 @@ pub mod GROUP0_0_VALUE {
             pub const Linked: u32 = 0x01;
         }
     }
-    pub mod MCHTMRO {
+    pub mod MCHTMR0 {
         pub const offset: u32 = 8;
         pub const mask: u32 = 0x01 << offset;
         pub mod R {}

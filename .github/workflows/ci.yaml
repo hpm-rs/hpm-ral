@@ -8,11 +8,11 @@ name: Continuous integration
 jobs:
   ci-linux:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental || false }}
+    continue-on-error: true
     strategy:
       matrix:
         # All generated code should be running on stable now, MSRV is 1.62.0
-        rust: [1.62.0, stable, nightly]
+        rust: [1.62.0, 1.60.0, 1.59.0, 1.56.0, stable, nightly]
         include:
           - rust: nightly
             experimental: true
